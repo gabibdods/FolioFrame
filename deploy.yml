@@ -3,6 +3,7 @@
   vars:
     known_hosts_path: "{{ lookup('env', 'KNOWN_HOSTS_PATH') }}"
     dest_path: "{{ lookup('env', 'DEST_PATH') }}"
+    collectstatic_python: "{{ lookup('env', 'COLLECTSTATIC_PYTHON') }}"
     collectstatic_command: "{{ lookup('env', 'COLLECTSTATIC_COMMAND') }}"
     remote_deploy_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   become: true
@@ -26,7 +27,7 @@
       become_user: www-data
       args:
         chdir: "{{ dest_path }}"
-      command: "{{ collectstatic_command }}"
+      command: "{{ collectstatic_python }} {{ collectstatic_command }}"
 
     - name: Reload systemd
       become: true

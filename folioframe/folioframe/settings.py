@@ -19,9 +19,10 @@ SECRET_KEY_PATH = os.path.join(BASE_DIR, 'envSecretKey.env')
 with open(SECRET_KEY_PATH) as SECRET_KEY_FILE:
     SECRET_KEY = SECRET_KEY_FILE.read().strip()
 # Debug must be turned off for production
-DEBUG = True
+DEBUG = False
 # Allowed urls
 ALLOWED_HOSTS = [
+    "localhost",
     "127.0.0.1",
     "gabrieldigitprint.work",
 ]
@@ -75,19 +76,21 @@ with open(RECAPTCHA_SECRET_KEY_PATH) as RECAPTCHA_SECRET_KEY_FILE:
     RECAPTCHA_SECRET_KEY = RECAPTCHA_SECRET_KEY_FILE.read().strip()
 # WSGI & Gunicorn
 WSGI_APPLICATION = 'folioframe.wsgi.application'
-##SECURE_SSL_REDIRECT = True #True FOR PRODUCTION, False FOR TEST
-##SECURE_HSTS_SECONDS = 60
-##SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-##SECURE_HSTS_PRELOAD = True
-##SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') #('HTTP_X_FORWARDED_PROTO', 'https') FOR PRODUCTION, None FOR TEST
+SECURE_SSL_REDIRECT = False # Trust HTTPS Redirect by Nginx
+SECURE_HSTS_SECONDS = 60
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') #('HTTP_X_FORWARDED_PROTO', 'https') FOR PRODUCTION, None FOR TEST
 # HTTPS
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-##SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-##CSRF_TRUSTED_ORIGINS = [
-##    "https://djanservice.gabrieldigitprint.work",
-##]
-##CONN_MAX_AGE = 1
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost",
+    "http://127.0.0.1",
+    "https://gabrieldigitprint.work",
+]
+CONN_MAX_AGE = 1
 # Database
 USE_SQLITE_FOR_TESTS = 'test' in sys.argv
 if USE_SQLITE_FOR_TESTS:
@@ -124,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
-##USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_HOST = True
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # sendEmail.php
