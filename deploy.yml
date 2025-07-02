@@ -21,6 +21,7 @@
         dest: "{{ dest_path }}"
         version: main
         force: yes
+        update: yes
 
     - name: Collect static files as www-data
       become: true
