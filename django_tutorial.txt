@@ -1,4 +1,4 @@
-bash: python3 venv ~/.venv/djangodev
+bash: python venv ~/.venv/djangodev
 
 bash: source ~/.venv/django/bin/activate
 

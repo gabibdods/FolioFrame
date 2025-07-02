@@ -17,7 +17,7 @@
 
     - name: Pull latest code
       ansible.builtin.git:
-        repo: 'git@gitlab.com:gabibdods/web_portfolio.git'
+        repo: 'git@gitlab.com:gabibdods/folioframe.git'
         dest: "{{ dest_path }}"
         version: main
         force: yes
