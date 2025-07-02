@@ -1,0 +1,44 @@
+venv: pip install gunicorn
+
+venv: sudo nano /etc/systemd/system/gunicorn.service
+
+nano: in /etc/systemd/system/gunicorn.service:
+  [Unit]
+  Description= gunicorn daemon for django server
+  After=network.target
+  
+  [Service]
+  User=<desktop_username>
+  Group=www-data
+  WorkingDirectory=<path/to/web/app>
+  ExecStart=<path/to/venv>
+            --acces-logfile - \
+			--workers 3 \
+			--bind <url_of_django_server>:<port_of_django_server> \
+			<app_name>:application
+  
+  [Install]
+  WantedBy=multi-user.target
+  
+venv: sudo systemctl daemon-reload
+venv: sudo systemctl daemon-reexec
+venv: sudo systemctl start gunicorn
+venv: sudo systemctl enable gunicorn
+		to set up and starting up gunicorn
+  
+venv: sudo systemctl daemon-reload
+venv: sudo systemctl daemon-reexec
+venv: sudo systemctl restart gunicorn
+venv: sudo systemctl status gunicorn
+		to configure gunicorn to run the django wsgi app
+
+venv: python manage.py check --deploy
+		this will give you a list of modifications to make BEFORE running the next command, to assure you and your website are safe from black hat hackers
+  
+venv: gunicorn <project_name.wsgi>
+
+nano: <project_name>/<project_name>/settings.py
+		change USE_X_FORWARDED_HOST=True
+		change SECURE_PROXY_SSL_HEADER={'HTTP_X_FORWARDED_PROTO', 'https'}
+		change your DNS tunnel's target port to 80
+		  in the case your CDN does not server your CSS files

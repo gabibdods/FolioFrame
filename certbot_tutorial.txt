@@ -1,0 +1,3 @@
+venv: sudo apt install certbot python3-cerbot-nginx
+
+venv: sudo certbot --nginx -d <url to web site>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>AntiBot Gate</title>
+		<link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static 'assets/css/gate.css' %}">
+        <script src="https://www.google.com/recaptcha/api.js?render=6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph"></script>
+    </head>
+    <body>
+        <div class="scaler">
+            <div id="container">
+            <h1>Verify You're Human</h1>
+            <p>Click the button below to continue.</p>
+            <form method="post" action="{% url 'captcha_gate' %}">
+                {% csrf_token %}
+                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                <button type="submit">Verify & Continue</button>
+            </form>
+        </div>
+        </div>
+        <script src="{% static 'assets/js/gate.js' %}"></script>
+        <script src="{% static 'assets/js/antizoom.js' %}"></script>
+    </body>
+</html>

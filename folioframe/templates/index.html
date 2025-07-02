@@ -1,0 +1,893 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Web Portfolio</title>
+
+		<link rel="stylesheet" href="{% static 'assets/css/font-googleapi.css' %}">
+		<link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/flip.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/venn.css' %}">
+    </head>
+
+	<body>
+		<header class="top-area" id="top">
+			<div class="header-area">
+				<nav class="navbar navbar-default bootsnav navbar-fixed dark no-background" id="navbar">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="#top">about me</a>
+						</div>
+
+						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+								<li class="smooth-menu active"><a href="#portfolio">portfolio</a></li>
+								<li class="smooth-menu active"><a href="#workflow">workflow</a></li>
+								<li class="smooth-menu active"><a href="#experience">experience</a></li>
+								<li class="smooth-menu active"><a href="#education">education</a></li>
+								<li class="smooth-menu active"><a href="#internships">internships</a></li>
+								<li class="smooth-menu active"><a href="#contact">contact me</a></li>
+								<li class="smooth-menu active"><a href="#about">about</a></li>
+								<li class="smooth-menu active">
+									<div class="flip-body">
+										<button class="theme-switcher-grid" id="theme-switcher-grid">
+											<div class="sun" id="sun" aria-hidden="true"></div>
+											<div class="moon-overlay" id="moon-overlay" aria-hidden="true"></div>
+											<div class="cloud-ball cloud-ball-left" id="ball1" aria-hidden="true"></div>
+											<div class="cloud-ball cloud-ball-middle" id="ball2" aria-hidden="true"></div>
+											<div class="cloud-ball cloud-ball-right" id="ball3" aria-hidden="true"></div>
+											<div class="cloud-ball cloud-ball-top" id="ball4" aria-hidden="true"></div>
+											<div class="star" id="star1" aria-hidden="true"></div>
+											<div class="star" id="star2" aria-hidden="true"></div>
+											<div class="star" id="star3" aria-hidden="true"></div>
+											<div class="star" id="star4" aria-hidden="true"></div>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+		</header>
+
+		<section id="welcome-hero" class="welcome-hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="header-text">
+							<h2>hello <span>, </span>I am Gabriel</h2>
+							<p>an inspired computer engineering co-op student<br>dedicated to full-stack development, security engineering & 5g engineering</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="portfolio" class="portfolio">
+			<input type="text" name="surprise" class="surpriser">
+			<div class="portfolio-details">
+				<div class="section-heading text-center">
+					<h2>portfolio</h2>
+				</div>
+				<div class="container">
+					<div class="portfolio-content">
+						<div class="isotope">
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/python.png' %}" alt="Flight Pollution Calculator"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/python_calculator/blob/main/README.md" target="_blank">
+												flight pollution<br> web app calculator
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/proxy.png' %}" alt="Squid Proxy DANTE SOCKS encrypting server"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/proxy_server/blob/main/README.md" target="_blank">
+												proxy socks<br>encrypting server
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/react.png' %}" alt="Web App Server on Pi 5"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/react_web_server/blob/main/README.md" target="_blank">
+												web app server<br>on pi 5
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/rgss.png' %}" alt="RGSS Game BDD Programming"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/rgss_game/blob/main/README.md" target="_blank">
+												behavior driven dev<br>game programming
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/tails.png' %}" alt="Web Cybersecurity Software Familiarization"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/web_cybersecurity/blob/main/README.md" target="_blank">
+												web cybersecurity<br>vulgarization
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/django.png' %}" alt="Web Portfolio on Production Server"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/web_portfolio/blob/main/README.md" target="_blank">
+												web portfolio<br> on production site
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/dotnet.png' %}" alt="Telemetry UDP Observer on Azure Container"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/telemetry_udp/blob/main/README.md" target="_blank">
+												telemetry udp<br>server on container
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/xilinx.png' %}" alt="FPGA RT Signal Processing System"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/fpga_system/blob/main/README.md" target="_blank">
+												fpga rt signal<br>processing system
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/windows.png' %}" alt="Windows OS"/>
+										<div class="isotope-overlay">
+											<a>
+												windows os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/mint.png' %}" alt="Linux Mint OS"/>
+										<div class="isotope-overlay">
+											<a>
+												linux mint os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/ubuntu.png' %}" alt="Linux Ubuntu OS"/>
+										<div class="isotope-overlay">
+											<a>
+												linux ubuntu os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/raspberrypi.png' %}" alt="Debian-based OS"/>
+										<div class="isotope-overlay">
+											<a>
+												debian-based<br>server os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/athena.png' %}" alt="Athena OS"/>
+										<div class="isotope-overlay">
+											<a>
+												athena os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/kali.png' %}" alt="Kali Linux OS"/>
+										<div class="isotope-overlay">
+											<a>
+												kali linux os
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-1">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/macx.png' %}" alt="Mac OS X"/>
+										<div class="isotope-overlay">
+											<a>
+												mac os x
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/stm32.png' %}" alt="Compression Algorithm on USB"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/custom_usb/blob/main/README.md" target="_blank">
+												coming soon<br><br>compression<br>algorithm on usb
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="item">
+										<img src="{% static 'assets/images/portfolio/arduino.png' %}" alt="FPGA RT Signal Processing System"/>
+										<div class="isotope-overlay">
+											<a href="https://github.com/gabibdods/music_player/blob/main/README.md" target="_blank">
+												coming soon<br><br>electronic<br>music player
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="workflow" class="workflow">
+			<div class="workflow-content">
+				<div class="section-heading text-center">
+					<h2>workflow</h2>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">python flight pollution<br>web app calculator<br></span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">squid proxy dante socks encrypting server</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">react node.js web app server on raspberrypi 5</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">ruby game scripting system behavior driven development</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">web cybersecurity software & concept vulgarization</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">web portfolio on django production server</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="completed">100%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">.net telemetry udp observer on azure container</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar progress-bar-uncompleted" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="uncompleted">85%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<span class="progressText">fpga real-time signal processing system</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar progress-bar-uncompleted" role="progressbar" aria-valuenow="5" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+										<h3 class="uncompleted">5%</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<h3>coming soon!</h3>
+									<span class="progressText">custom compression algorithm on tailor-made usb</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="single-workflow-content">
+								<div class="barWrapper">
+									<h3>coming soon!</h3>
+									<span class="progressText">custom electronic music player</span>
+									<div class="single-progress-txt">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="10" aria-valuemax="100">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="experience" class="experience">
+			<div class="section-heading text-center">
+				<h2>experience</h2>
+			</div>
+			<div class="container">
+				<div class="experience-content">
+					<div class="main-timeline">
+						<ul>
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-5">
+											<div class="experience-time text-right">
+												<h2>2024 - present</h2>
+												<h3>private tutor</h3>
+											</div>
+										</div>
+										<div class="col-md-offset-1 col-md-5">
+											<div class="timeline">
+												<div class="timeline-content">
+													<h4 class="title">
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														elementary and middle school tutor
+													</h4>
+													<p class="description">
+														Assisted each pupil with their learning style in mind│Reported a 10% GPA increase on average
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-offset-1 col-md-5 experience-time-responsive">
+											<div class="experience-time">
+												<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div class="timeline">
+												<div class="timeline-content text-right">
+													<h4 class="title">youth day camp animator</h4>
+													<p class="description">
+														Supervised and ensured the safety of young children in dynamic and fast-paced day camp setting
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-offset-1 col-md-5 experience-time-main">
+											<div class="experience-time">
+												<h2>
+													<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+													2022 - 2024
+												</h2>
+												<h3>day camp animator</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="single-timeline-box fix">
+									<div class="row">
+										<div class="col-md-5">
+											<div class="experience-time text-right">
+												<h2>2020 - 2021</h2>
+												<h3>volunteer tutor</h3>
+											</div>
+										</div>
+										<div class="col-md-offset-1 col-md-5">
+											<div class="timeline">
+												<div class="timeline-content">
+													<h4 class="title">
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														elementary school volunteer tutor
+													</h4>
+													<p class="description">
+														Supported anglophone pupils learning French │ Reported a 7% GPA increase on average
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="education" class="education">
+			<div class="section-heading text-center">
+				<h2>education</h2>
+			</div>
+			<div class="container">
+				<div class="education-horizontal-timeline">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="single-horizontal-timeline">
+								<div class="experience-time">
+									<h2>2017 - present</h2>
+									<h3>online learning <span>– </span><span>edx </span><span>. </span><span>org</span></h3>
+								</div>
+								<div class="timeline-horizontal-border">
+									<i class="fa fa-circle" aria-hidden="true"></i>
+									<span class="single-timeline-horizontal"></span>
+								</div>
+								<div class="timeline">
+									<div class="timeline-content">
+										<h4 class="title">
+											self-directed
+										</h4>
+										<p class="description">
+											Core Competencies: Full-Stack Web Development │ RESTful API Design │ SQL Database Management │ Defense Security Engineering │ MATLAB Scripting & Visualization │ Cloud Architecture & Service Models │ Docker Fundamentals
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="single-horizontal-timeline">
+								<div class="experience-time">
+									<h2>2022 - 2024</h2>
+									<h3>diploma <span>of </span>college studies</h3>
+								</div>
+								<div class="timeline-horizontal-border">
+									<i class="fa fa-circle" aria-hidden="true"></i>
+									<span class="single-timeline-horizontal"></span>
+								</div>
+								<div class="timeline">
+									<div class="timeline-content">
+										<h4 class="title">
+											pure and applied sciences
+										</h4>
+										<p class="description">
+											Strong base in applied mathematics, chemistry and physics<br>Graduated with the International Baccalaureate Diploma
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="single-horizontal-timeline">
+								<div class="experience-time">
+									<h2>2024 - 2028</h2>
+									<h3>bachelor <span>of </span> engineering</h3>
+								</div>
+								<div class="timeline-horizontal-border">
+									<i class="fa fa-circle" aria-hidden="true"></i>
+									<span class="single-timeline-horizontal spacial-horizontal-line"></span>
+								</div>
+								<div class="timeline">
+									<div class="timeline-content">
+										<h4 class="title">
+											co-op computer engineering
+										</h4>
+										<p class="description">
+											Core Competencies: Discrete Mathematics │ Programming Methodology II │ Digital Systems Design II │ Basic Circuit Analysis │ Computer & Software Organization │ Applied Differential Equations │ Professional Practices & Responsibilities
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="internships" class="internships">
+			<div class="section-heading text-center">
+				<h2>internships</h2>
+			</div>
+			<div class="row internships-row">
+				<h2>You could see your name here!</h2>
+			</div>
+		</section>
+
+		<section id="contact" class="contact">
+			<div class="section-heading text-center">
+				<h2>contact me</h2>
+			</div>
+			<div class="container">
+				<div class="contact-content">
+					<div class="row">
+						<div class="col-md-offset-1 col-md-5 col-sm-6">
+							<div class="single-contact-box">
+								<div class="contact-form">
+									<form id="contact-form-to-be-submitted" action="/home/contact/" method="POST">
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label for="name"><input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6 col-xs-12">
+												<div class="form-group">
+													<label for="email"><input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<label for="subject"><input type="text" class="form-control" id="subject" placeholder="The Subject" name="subject" required></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group">
+													<label for="message"><textarea class="form-control" rows="3" id="message" placeholder="Your Message" name="message" required></textarea></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="single-contact-btn">
+													<input class="contact-btn" type="submit" value="Send">
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-offset-1 col-md-5 col-sm-6">
+							<div class="single-contact-box">
+								<div class="contact-address">
+									<div class="contact-add-head">
+										<h3>gabriel oliveira da silva</h3>
+										<p>bachelor <span>of </span>engineering co-operative education student</p>
+									</div>
+									<div class="contact-add-info">
+										<div class="single-contact-add-info">
+											<h3>email:</h3>
+											<p><a href="mailto:gabriel.ods.14@hotmail.com" target="_blank">gabriel.ods.14@hotmail.com</a></p>
+										</div>
+										<div class="single-contact-add-info">
+											<h3>github:</h3>
+											<p><a href="https://github.com/gabibdods" target="_blank">gabibdods</a></p>
+										</div>
+									</div>
+								</div>
+								<div class="hm-foot-icon">
+									<ul>
+										<li>
+											<a href="https://www.hackerrank.com/profile/gabriel_da_silva" target="_blank">
+												<img src="{% static 'assets/images/about/hackerrank.png' %}" alt="HackerRank">
+											</a>
+										</li>
+										<li>
+											<a href="https://leetcode.com/u/ga_olive/" target="_blank">
+												<img src="{% static 'assets/images/about/leetcode.png' %}" alt="LeetCode">
+											</a>
+										</li>
+										<li>
+											<a href="https://devpost.com/gabriel-ods-14" target="_blank">
+												<img src="{% static 'assets/images/about/devpost.png' %}" alt="DevPost">
+											</a>
+										</li>
+										<li>
+											<a href="https:stackoverflow.com/users/30744761/gabibdods" target="_blank">
+												<img src="{% static 'assets/images/about/stackoverflow.png' %}" alt="StackOverflow">
+											</a>
+										</li>
+										<li>
+											<a href="https://linkedin.com/in/gabriel-barbosa-de-oliveira-da-silva" target="_blank">
+												<img src="{% static 'assets/images/about/linkedin.png' %}" alt="LinkedIn">
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="about">
+			<div class="section-heading text-center">
+				<h2>About</h2>
+			</div>
+			<div class="container">
+				<div class="about-content">
+					<div class="row">
+						<div class="single-about-txt">
+							<p class="description">
+								This is my personal portfolio site — built using HTML, CSS, PHP and JavaScript for the front-end, Django Framework, Python and SQL for the back-end, Gunicorn, NGINX and Cloudflare CDN for production deployment and accessibility on the public internet.<br><br>It showcases my projects and lets visitors send me messages. It reflects my skills in full-stack development and secure deployment.<br><br> This is a professional space where recruiters, collaborators, and tech enthusiasts can learn about my work and get in touch.
+							</p>
+							<h3><a href="{% url 'index' %}#contact">You can contact me to take a look at my resume!</a></h3>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="single-about-add-info">
+										<h3>business email</h3>
+										<p><a href="mailto:gabriel.ods.14@hotmail.com" target="_blank">gabriel.ods.14@hotmail.com</a></p>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="single-about-add-info">
+										<h3>web portfolio</h3>
+										<p>djanservice.gabrieldigitprint.work</p>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="single-about-add-info">
+										<h3> personal domain</h3>
+										<p>gabrieldigitprint.work</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="venn-container" id="venn-container">
+				<div class="venn-box">
+					<div class="venn-circle-wrapper venn-wrapper1">
+						<div class="venn-circle venn-circle1" id="venn-circle1"></div>
+						<div class="venn-label">Reading</div>
+					</div>
+					<div class="venn-circle-wrapper venn-wrapper2">
+						<div class="venn-circle venn-circle2" id="venn-circle2"></div>
+						<div class="venn-label">Writing</div>
+					</div>
+					<div class="venn-circle-wrapper venn-wrapper3">
+						<div class="venn-circle venn-circle3" id="venn-circle3"></div>
+						<div class="venn-label">Speaking</div>
+					</div> <!-- reference system: ( +x -> , \/ +y ) -->
+					<div class="venn-flag-bubble venn-arabic" style="--start-x: -320%; --start-y: 500%;">
+						<img src="{% static 'assets/images/bubbles/ae.svg' %}" alt="Arabic">
+					</div>
+					<div class="venn-flag-bubble venn-catalan" style="--start-x: -300%; --start-y: 350%;">
+						<img src="{% static 'assets/images/bubbles/ct.svg' %}" alt="Catalan">
+					</div>
+					<div class="venn-flag-bubble venn-polish" style="--start-x: -340%; --start-y: 150%;">
+						<img src="{% static 'assets/images/bubbles/pl.svg' %}" alt="Polish">
+					</div>
+					<div class="venn-flag-bubble venn-music" style="--start-x: -210%; --start-y: 60%;">
+						<img src="{% static 'assets/images/bubbles/clef_de_sol.png' %}" alt="Music">
+					</div>
+					<div class="venn-flag-bubble venn-italian" style="--start-x: 0%; --start-y: 370%;">
+						<img src="{% static 'assets/images/bubbles/it.svg' %}" alt="Italian">
+					</div>
+					<div class="venn-flag-bubble venn-spanish" style="--start-x: 70%; --start-y: 230%;">
+						<img src="{% static 'assets/images/bubbles/es.svg' %}" alt="Spanish">
+					</div>
+					<div class="venn-flag-bubble venn-portuguese" style="--start-x: 0%; --start-y: 120%;">
+						<img src="{% static 'assets/images/bubbles/br.svg' %}" alt="Portuguese">
+					</div>
+					<div class="venn-flag-bubble venn-french" style="--start-x: 60%; --start-y: 10%;">
+						<img src="{% static 'assets/images/bubbles/fr.svg' %}" alt="French">
+					</div>
+					<div class="venn-flag-bubble venn-english" style="--start-x: -60%; --start-y: 10%;">
+						<img src="{% static 'assets/images/bubbles/us.svg' %}" alt="English">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/fr.svg' %}" alt="French">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Français</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/us.svg' %}" alt="English">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">English</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/br.svg' %}" alt="Portuguese">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Português</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/es.svg' %}" alt="Spanish">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Español</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/it.svg' %}" alt="Italian">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Italiano</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/pl.svg' %}" alt="Polish">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Polski</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/ct.svg' %}" alt="Catalan">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Català</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-flag-bubble">
+							<img src="{% static 'assets/images/bubbles/ae.svg' %}" alt="Arabic">
+						</div>
+					</div>
+					<div class="col-xs-1">
+						<div class="venn-label">Arabic</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer-copyright" class="footer-copyright">
+			<div class="container">
+				<div class="hm-footer-copyright text-center">
+					<p>&copy; copyright</p>
+				</div>
+			</div>
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up"></i>
+				</div>
+			</div>
+        </footer>
+
+		<script src="{% static 'assets/js/jquery.js' %}"></script>
+		<script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootsnav.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+		<script src="{% static 'assets/js/progressbar.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+		<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+		<script src="{% static 'assets/js/csrf.js' %}"></script>
+		<script src="{% static 'assets/js/flip.js' %}"></script>
+    </body>
+</html>

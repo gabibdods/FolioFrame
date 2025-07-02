@@ -1,0 +1,29 @@
+stages:
+  - deploy
+variables:
+  ANSIBLE_HOST_KEY_CHECKING: "False"
+deploy:
+  tags:
+    - gitlab-runner
+  stage: deploy
+  image: python:3.9
+  before_script:
+    - whoami
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install ansible
+    - mkdir -p /root/.ssh
+    - echo "$ANSIBLE_PRIVATE_KEY_B64" | base64 -d > /root/.ssh/id_ed25519
+    - chmod 600 /root/.ssh/id_ed25519
+    - ssh -i /root/.ssh/id_ed25519 -o StrictHostKeyChecking=no root@$SERVER_IP 'echo "SSH key works as root"' || { echo "SSH key failed"; }
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
+    - echo "[web]" > inventory
+    - echo "$SERVER_IP ansible_user=$ANSIBLE_USER ansible_ssh_private_key_file=/root/.ssh/id_ed25519" >> inventory
+  script:
+    - source venv/bin/activate
+    - ansible-playbook -i inventory deploy.yml -vvv --private-key /root/.ssh/id_ed25519
+  only:
+    - main
+  artifacts:
+    expire_in: 1 minute

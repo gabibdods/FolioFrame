@@ -1,0 +1,24 @@
+bash: python3 venv ~/.venv/djangodev
+
+bash: source ~/.venv/django/bin/activate
+
+venv: python -m pip install Django
+venv: python -m django --version
+	  to install django
+
+venv: mkdir <projectname>
+
+venv: django admin startproject mysite <project_name>
+
+venv: python manage.py startapp <app_name>
+
+venv: python manage.py migrate
+venv: python manage.py makemigrations <app_name>
+	  to migrate models
+
+venv: python manage.py shell
+
+venv: python manage.py createsuperuser
+
+venv: python manage.py run
+	  to start development server, DO NOT USE the development server as a production server, it can be very bad

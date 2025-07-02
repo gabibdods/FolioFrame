@@ -1,0 +1,63 @@
+- name: Deploy Django updates
+  hosts: all
+  vars:
+    known_hosts_path: "{{ lookup('env', 'KNOWN_HOSTS_PATH') }}"
+    dest_path: "{{ lookup('env', 'DEST_PATH') }}"
+    collectstatic_command: "{{ lookup('env', 'COLLECTSTATIC_COMMAND') }}"
+    remote_deploy_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
+  become: true
+  become_user: "{{ remote_deploy_user }}"
+  tasks:
+    - name: Ensure gitlab.com is in known_hosts
+      ansible.builtin.known_hosts:
+        name: gitlab.com
+        key: "{{ lookup('pipe', 'ssh-keyscan gitlab.com') }}"
+        path: "{{ known_hosts_path }}"
+
+    - name: Pull latest code
+      ansible.builtin.git:
+        repo: 'git@gitlab.com:gabibdods/web_portfolio.git'
+        dest: "{{ dest_path }}"
+        version: main
+        force: yes
+
+    - name: Collect static files as www-data
+      become: true
+      become_user: www-data
+      args:
+        chdir: "{{ dest_path }}"
+      command: "{{ collectstatic_command }}"
+
+    - name: Reload systemd
+      become: true
+      become_user: root
+      command: systemctl daemon-reload
+
+    - name: Restart Gunicorn
+      become: true
+      become_user: root
+      systemd:
+        name: gunicorn
+        state: restarted
+
+    - name: Test Nginx config
+      become: true
+      become_user: root
+      command: nginx -t
+
+    - name: Restart Nginx
+      become: true
+      become_user: root
+      systemd:
+        name: nginx
+        state: restarted
+        
+    - name: sudo update
+      become: true
+      become_user: root
+      command: apt update
+        
+    - name: sudo upgraded
+      become: true
+      become_user: root
+      command: apt upgrade -y
