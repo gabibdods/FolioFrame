@@ -15,10 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
+import folioframe.views as folioframe
 
 urlpatterns = [
     path('', include("foliogate.urls")),
     path('admin/', admin.site.urls),
     path('home/', include("foliohome.urls")),
+    re_path(r'^(?P<code>\d{3})/$', folioframe.showErrorTemplate, name='showErrorTemplate'),
 ]

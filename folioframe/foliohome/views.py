@@ -4,7 +4,7 @@ from .forms import ContactForm
 
 def index(request):
     if request.POST.get('surprise'):
-        return render(request, '403.html')
+        return redirect('/403')
     return render(request, 'index.html')
 
 def contact_view(request):

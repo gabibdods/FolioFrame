@@ -4,6 +4,7 @@
     --back-color-highlight: #013d2b;
     --bg-color-highlight: #fabc1c;
     --bg-color-before: #1f2c6c;
+    --background-veil: #1c213580;
     --bg-color-before-clear: #1c2135e0;
     --bg-color-before-clearest: #1c213530;
     --bg-color-light-start: #f0f0e8;
@@ -153,7 +154,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--main-color-highlight);}
     align-items: center;
     justify-content: center;
     position:relative;
-    background:url(../images/about/welcome-banner.jpg)no-repeat;
+    background:url(../images/about/background.png);
+    background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
     height:890px;

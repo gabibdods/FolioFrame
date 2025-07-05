@@ -18,7 +18,7 @@ def captcha_gate_view(request):
             request.session['passed_captcha'] = True
             return redirect('index')
         else:
-            return render(request, '403.html')
+            return redirect('/403')
     return render(request, 'gate.html')
 
 def index(request):

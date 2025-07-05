@@ -1,9 +1,9 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from . import views
+import foliohome.views as foliohome
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('contact/', views.contact_view, name='contact'),
+    path('', foliohome.index, name="index"),
+    path('contact/', foliohome.contact_view, name='contact'),
     path('success/', TemplateView.as_view(template_name='success.html'), name='success'),
 ]

@@ -5,7 +5,7 @@ from django.urls import reverse
 def blockAdmin(get_response):
     def middleware(request):
         if request.path.startswith('/admin') and (not request.user.is_staff):
-            return render(request, '403.html', status=403)
+            return redirect('/403')
         return get_response(request)
     return middleware
 
@@ -23,5 +23,5 @@ class JavaScriptCheck:
             request.session['checked_js'] = True
             return redirect(reverse(foliogate.captcha_gate_view))
         if not request.path.startswith('/gate/'):
-            return render(request, '403.html')
+            return redirect('/403')
         return self.get_response(request)
