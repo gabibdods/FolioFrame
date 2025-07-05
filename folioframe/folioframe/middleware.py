@@ -16,12 +16,22 @@ class JavaScriptCheck:
     def __call__(self, request):
         if request.method != 'GET':
             return self.get_response(request)
-        jsEnabled = request.COOKIES.get('js_enabled')
-        if jsEnabled:
-            return self.get_response(request)
-        if not request.session.get('checked_js'):
-            request.session['checked_js'] = True
-            return redirect(reverse(foliogate.captcha_gate_view))
-        if not request.path.startswith('/gate/'):
-            return redirect('/403')
-        return self.get_response(request)
+        else:
+            if request.path.startswith('/403'):
+                return render(request, '403.html')
+            if request.path.startswith('/gate'):
+                return render(request, 'gate.html')
+            if request.session.get('checked_js'):
+                if request.COOKIES.get('js_enabled'):
+                    if request.session.get('passed_captcha'):
+                        return self.get_response(request)
+                    else:
+                        return redirect(reverse(foliogate.captcha_gate_view))
+                else:
+                    return redirect('/403')
+            else:
+                request.session['checked_js'] = True
+                if request.COOKIES.get('js_enabled'):
+                    return redirect(reverse(foliogate.captcha_gate_view))
+                else:
+                    return redirect(reverse(foliogate.captcha_gate_view))

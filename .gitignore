@@ -12,6 +12,9 @@ folioenv/**
 !folioframe/
 !folioframe/*
 
+folioframe/.idea/
+folioframe/.idea/**
+
 folioframe/*.sqlite3
 folioframe/*.env
 
