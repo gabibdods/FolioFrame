@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'assets/css/response.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section id="welcome-hero" class="welcome-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2>success<span>, </span>noun <span>:</span></h2>
+                        <h2>chasing consistency every day</h2>
+                        <h2><span>not </span>chasing every day constantly :)</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <script src="{% static 'assets/js/flip.js' %}"></script>
+{% endblock %}

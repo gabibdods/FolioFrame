@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'assets/css/response.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section id="welcome-hero" class="welcome-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2>207 = <span>?</span></h2>
+                        <p>200 + 201 + 403 + 404 + 423 + ...</p>
+                        <p>nota bene: but only in XML payloads, HTML math doesn't work like that :)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <script src="{% static 'assets/js/flip.js' %}"></script>
+{% endblock %}

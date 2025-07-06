@@ -1,40 +1,30 @@
-folioenv/
-folioenv/**
-
 *
 
 !.gitignore
 !*.yml
 !*.txt
-!README.md
 !*.pdf
+!README.md
 
 !folioframe/
-!folioframe/*
-
-folioframe/.idea/
-folioframe/.idea/**
+!folioframe/**
 
 folioframe/*.sqlite3
 folioframe/*.env
 
-!folioframe/templates/
-!folioframe/templates/*
+folioframe/foliofin/__pycache__/
+folioframe/foliofin/__pycache__/**
+folioframe/foliofin/migrations/
+folioframe/foliofin/migrations/**
 
-!folioframe/static/
-!folioframe/static/**
-
-!folioframe/folioframe/*
 folioframe/folioframe/__pycache__/
 folioframe/folioframe/__pycache__/**
 
-!folioframe/foliogate/*
 folioframe/foliogate/__pycache__/
 folioframe/foliogate/__pycache__/**
 folioframe/foliogate/migrations/
 folioframe/foliogate/migrations/**
 
-!folioframe/foliohome/*
 folioframe/foliohome/__pycache__/
 folioframe/foliohome/__pycache__/**
 folioframe/foliohome/migrations/

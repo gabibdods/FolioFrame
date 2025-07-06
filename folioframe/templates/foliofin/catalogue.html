@@ -1,0 +1,10 @@
+{% extends 'basis.html' %}
+
+{% block main %}
+    <h1>Catalogue</h1>
+    <ul>
+        {% for video in videos %}
+            <li><a href="{% url 'detail' video.id %}"></a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

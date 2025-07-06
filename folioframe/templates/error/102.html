@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'assets/css/response.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section id="welcome-hero" class="welcome-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2>just a minute <span>!</span></h2>
+                        <p>yeah I took a class but there's still nothing wrong with using a dictionary :)</p>
+                        <p>nota bene: http status 102 is not meant to be used a final response !<br>it is coded to be a provisional response</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <script src="{% static 'assets/js/flip.js' %}"></script>
+{% endblock %}
