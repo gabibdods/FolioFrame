@@ -5,12 +5,19 @@
 !*.txt
 !*.pdf
 !README.md
+!*.nginx
+!*.gunicorn
 
 !folioframe/
 !folioframe/**
 
 folioframe/*.sqlite3
 folioframe/*.env
+
+folioframe/co2hi/__pycache__/
+folioframe/co2hi/__pycache__/**
+folioframe/co2hi/migrations/
+folioframe/co2hi/migrations/**
 
 folioframe/foliofin/__pycache__/
 folioframe/foliofin/__pycache__/**

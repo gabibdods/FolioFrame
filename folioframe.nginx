@@ -1,0 +1,19 @@
+http {
+    limit_req_zone $binary_remote_addr zopne-one:10m rate=5r/s;
+    server {
+        listen 80;
+        server_name gabrieldigitprint.work;
+        location = /favicon.ico {
+            access_log off;
+            log_not_found off;
+        }
+        location /static/ {
+            alias <redacted>;
+        }
+        location / {
+		    limit_req zone=one burst=10 nodelay;
+            proxy_pass http://127.0.0.1:8000;
+            include proxy_params;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[Unit]
+After=network.target
+
+[Service]
+TimeoutStopSec=5
+RestartSec=2
+User=<redacted>
+Group=<redacted>
+WorkingDirectory=<redacted>
+ExecStart=<redacted> \
+          --access-logfile - \
+          --workers 3 \
+          --bind localhost:8000 \
+          folioframe.wsgi:application
+Environment=<redacted>
+Environment=<redacted>
+Environment=<redacted>
+Environment=<redacted>
+[Install]
+WantedBy=multi-user.target
