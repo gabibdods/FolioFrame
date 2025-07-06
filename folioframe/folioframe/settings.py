@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+# Version
+APP_VERSION = "3.5.7"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key
@@ -30,6 +32,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'foliogate',
     'foliohome',
+    'foliofin',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,8 +48,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'folioframe.middleware.blockAdmin',
-    'folioframe.middleware.JavaScriptCheck',
+    'folioframe.middleware.Block',
+    'folioframe.middleware.Limit',
+    'folioframe.middleware.Authenticate',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -67,6 +71,10 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATES[0]['OPTIONS']['context_processors'].append('folioframe.context_processors.version')
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #reCAPTCHA
 RECAPTCHA_SITE_KEY = '6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph'
 RECAPTCHA_DEFAULT_ACTION = 'gate'

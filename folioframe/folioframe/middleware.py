@@ -1,15 +1,28 @@
-from django.shortcuts import render, redirect
-import foliogate.views as foliogate
+from django.conf import settings
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render
+from django.utils.deprecation import MiddlewareMixin
 from django.urls import reverse
+import folioframe.views
+import foliogate.views
 
-def blockAdmin(get_response):
-    def middleware(request):
+class Block:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
         if request.path.startswith('/admin') and (not request.user.is_staff):
-            return redirect('/403')
-        return get_response(request)
-    return middleware
+            return redirect('/401')
+        return self.get_response(request)
 
-class JavaScriptCheck:
+class Limit(MiddlewareMixin):
+    def process_exception(self, request, exception):
+        if isinstance(exception, PermissionDenied) and getattr(request, 'limited', False):
+            return redirect('/429')
+        return None
+
+class Authenticate:
     def __init__(self, get_response):
         self.get_response = get_response
 
@@ -17,8 +30,8 @@ class JavaScriptCheck:
         if request.method != 'GET':
             return self.get_response(request)
         else:
-            if request.path.startswith('/403'):
-                return render(request, '403.html')
+            if request.path.startswith('/428'):
+                return render(request, 'error/428.html')
             if request.path.startswith('/gate'):
                 return render(request, 'gate.html')
             if request.session.get('checked_js'):
@@ -26,12 +39,12 @@ class JavaScriptCheck:
                     if request.session.get('passed_captcha'):
                         return self.get_response(request)
                     else:
-                        return redirect(reverse(foliogate.captcha_gate_view))
+                        return redirect(reverse(foliogate.views.gate))
                 else:
-                    return redirect('/403')
+                    return redirect('/428')
             else:
                 request.session['checked_js'] = True
                 if request.COOKIES.get('js_enabled'):
-                    return redirect(reverse(foliogate.captcha_gate_view))
+                    return redirect(reverse(foliogate.views.gate))
                 else:
-                    return redirect(reverse(foliogate.captcha_gate_view))
+                    return redirect(reverse(foliogate.views.gate))

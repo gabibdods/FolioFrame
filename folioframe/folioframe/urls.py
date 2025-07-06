@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include("foliogate.urls")),
     path('admin/', admin.site.urls),
     path('home/', include("foliohome.urls")),
-    re_path(r'^(?P<code>\d{3})/$', folioframe.showErrorTemplate, name='showErrorTemplate'),
+    re_path(r'^(?P<code>\d{3})/$', folioframe.error, name='showErrorTemplate'),
+    #path('foliofin/', include("foliofin.urls")),
 ]

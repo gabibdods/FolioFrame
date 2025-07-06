@@ -1,13 +1,20 @@
+from django.conf import settings
 from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from django.urls import reverse
 
+from .forms import ContactForm
+from django_ratelimit.decorators import ratelimit
+
+@ratelimit(key='ip', rate='10/h', block=True)
 def index(request):
     if request.POST.get('surprise'):
         return redirect('/403')
-    return render(request, 'index.html')
+    return render(request, 'index.html', status=202)
 
-def contact_view(request):
+@ratelimit(key='ip', rate='10/h', block=True)
+def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -16,11 +23,19 @@ def contact_view(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             subject = f"Subject: {subject}"
-            message_body = f"New Contact From Web Site Form Submission: {name} at <{email}>\n\n{message}"
+            message_body = f"New Contact From Web Site Form Submission : {name} at <{email}>\n\n{message}"
             from_email = 'gabriel.ods.14@hotmail.com'
             to_email = ['gabriel.ods.14@hotmail.com']
             send_mail(subject, message_body, from_email, to_email)
-            return redirect('success')
-    else:
-        form = ContactForm()
-    return redirect('/')
+            return redirect(reverse(success))
+    return redirect(reverse(index))
+
+@ratelimit(key='ip', rate='10/h', block=True)
+def success(request):
+    return render(request, 'success.html', status=201)
+
+@ratelimit(key='ip', rate='10/h', block=False)
+def block(request):
+    if getattr(request, 'limited', False):
+        return redirect('/429')
+    return None

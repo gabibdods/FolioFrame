@@ -1,0 +1,41 @@
+## ✅ 5. **Device Fingerprinting** (advanced)
+
+Track:
+
+* User agent
+* Screen resolution
+* Time zone
+* Installed fonts
+* Mouse movement patterns
+
+🟡 Can detect repeat access from fake browsers, but also **has GDPR/privacy concerns**
+
+Use libraries like:
+
+* FingerprintJS (JS-based)
+* Your own session fingerprint hashes
+
+---
+
+## ✅ 6. **Cloudflare Bot Management**
+
+If your domain is live, Cloudflare offers:
+
+* Bot score detection
+* JS challenge pages
+* Region-based access control
+
+🛡️ It’s very effective without modifying your backend.
+
+---
+
+## ✅ 8. **Use Signed URLs or Tokens**
+
+For high-value content (downloads, video links, etc.), serve via:
+
+* Expiring links
+* Signed tokens with HMAC
+
+This prevents bots from directly accessing URLs even if they’re scraped.
+
+---
