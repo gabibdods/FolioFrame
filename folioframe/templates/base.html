@@ -10,8 +10,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{% static 'assets/css/font-googleapi.css' %}">
 		<link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static 'assets/css/font-googleapi.css' %}">
 		<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
 		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
 		<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
@@ -27,7 +27,7 @@
     {% endblock %}
     </head>
     <body>
-        <header class="top-area" id="top">
+        <header class="top-area">
         {% block header %}
             <div class="header-area">
                 <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background" id="navbar">
@@ -36,18 +36,18 @@
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                                 <i class="fa fa-bars"></i>
                             </button>
-                            <a class="navbar-brand" href="{% url 'index' %}#top">about me</a>
+                            <a class="navbar-brand">about me</a>
                         </div>
                         <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                             <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#portfolio" onclick="window.location.href = this.href; return false;">portfolio</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#workflow" onclick="window.location.href = this.href; return false;">workflow</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#experience" onclick="window.location.href = this.href; return false;">experience</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#education" onclick="window.location.href = this.href; return false;">education</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#internships" onclick="window.location.href = this.href; return false;">internships</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#contact" onclick="window.location.href = this.href; return false;">contact me</a></li>
-                                <li class="smooth-menu active"><a href="{% url 'index' %}#about" onclick="window.location.href = this.href; return false;">about</a></li>
-                                <li class="smooth-menu active">
+                                <li><a href="{% url 'index' %}#portfolio" smooth-scroll-menu>portfolio</a></li>
+                                <li><a href="{% url 'index' %}#workflow" smooth-scroll-menu>workflow</a></li>
+                                <li><a href="{% url 'index' %}#experience" smooth-scroll-menu>experience</a></li>
+                                <li><a href="{% url 'index' %}#education" smooth-scroll-menu>education</a></li>
+                                <!--<li><a href="{% url 'index' %}#internships" smooth-scroll-menu>internships</a></li>-->
+                                <li><a href="{% url 'index' %}#contact" smooth-scroll-menu>contact me</a></li>
+                                <li><a href="{% url 'index' %}#about" smooth-scroll-menu>about</a></li>
+                                <li>
                                     <div class="flip-body">
                                         <button class="theme-switcher-grid" id="theme-switcher-grid" aria-label="Switch theme">
                                             <div class="sun" id="sun" aria-hidden="true"></div>
@@ -90,6 +90,7 @@
         {% endblock %}
         </footer>
         {% block script %}
+        <script src="{% static 'assets/js/smooth.js' %}"></script>
         <script src="{% static 'assets/js/jquery.js' %}"></script>
 		<script src="{% static 'assets/js/modernizr.min.js' %}"></script>
 		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>

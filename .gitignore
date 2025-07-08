@@ -14,10 +14,8 @@
 folioframe/*.sqlite3
 folioframe/*.env
 
-folioframe/co2hi/__pycache__/
-folioframe/co2hi/__pycache__/**
-folioframe/co2hi/migrations/
-folioframe/co2hi/migrations/**
+folioframe/.idea/
+folioframe/.idea/**
 
 folioframe/foliofin/__pycache__/
 folioframe/foliofin/__pycache__/**
