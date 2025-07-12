@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'FerroRosso';
+    src: url("../fonts/title.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Arcade';
+    src: url("../fonts/interfaceDesc.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Freedom';
+    src: url("../fonts/interfaceButton.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Premium';
+    src: url("../fonts/premium.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Babel';
+    src: url("../fonts/premiumDesc.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger';
+    src: url("../fonts/premiumButton.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MendlSerif';
+    src: url("../fonts/premiumInput.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+main {
+    z-index: 100;
+}
+body {
+    width: 100vw;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.glass {
+    width: 100vw;
+    height: 0;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+}
+#top, #bottom {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+#gate, #client {
+    min-width: 900px;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: bgFade 12s ease infinite;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    position: fixed;
+}
+#client {
+    color: white;
+    padding-bottom: 18.5rem;
+}
+#title, #clientTitle, #status, #clientStatus {
+    font-family: 'FerroRosso', serif;
+    font-size: 6rem;
+    transition: color 4s ease-in-out, letter-spacing 2.5s ease-in-out;
+    color: white;
+}
+#title.upgraded, #clientTitle.upgraded {
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 4.6px;
+    margin-bottom: -26px;
+}
+#clientTitle.upgraded {
+    margin-bottom: -37px;
+}
+#status, #clientStatus {
+    font-family: 'Premium', serif;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0;
+}
+#status.upgraded, #clientStatus.upgraded {
+    letter-spacing: 10px;
+}
+#desc {
+    font-family: 'Arcade', serif;
+    font-size: 55px;
+    margin-bottom: 110px;
+    transition: color 4s ease-in-out, letter-spacing 2.5s ease-in-out;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+}
+#desc.upgraded {
+    font-family: 'Babel', serif;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 4px;
+}
+.glass-button {
+    position: absolute;
+    left: 20%;
+    top: 85%;
+    padding: 0.5rem;
+    background-color: rgba(255,255,255,0.3);
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: bgFade 12s ease infinite;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    backdrop-filter: blur(30px);
+}
+.glass-button:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+#pass, #activate {
+    font-family: 'Freedom', serif;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: left 1s ease-in-out, color 1s ease-in-out, letter-spacing 1s ease-in-out;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+}
+#pass.upgraded {
+    left: 42.5%;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 4px;
+}
+#pass.upgradedFont {
+    font-family: 'Babel', serif;
+}
+#activate {
+    transition: left 1s ease-in-out, color 1s ease-in-out, opacity 0.5s ease-in-out;
+    left: 60%;
+}
+#activate.upgraded {
+    left: 82.5%;
+    color: rgba(255,255,255,0);
+    letter-spacing: 4px;
+    opacity: 0;
+}
+.flash {
+    animation: flashPulse 4s ease-in-out;
+}
+@keyframes flashPulse {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+#container {
+    position: relative;
+    width: 94.5%;
+    left: 2%;
+    top: 0;
+}
+#container textarea {
+    width: 100%;
+    resize: none;
+}
+#text {
+    font-family: 'Blogger', serif;
+    width: 100%;
+    min-height: 2rem;
+    max-height: 50vh;
+    overflow: hidden;
+    resize: none;
+    line-height: 1.5;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    left: 0;
+}
+#text.upgradedFont {
+    font-family: 'MendlSerif', serif;
+}
+#text::placeholder, #type::placeholder, #dragdrop span, #time::placeholder, #traps::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+#type, #dragdrop, #time, #traps {
+    font-family: 'Blogger', serif;
+    position: absolute;
+    width: 48%;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+#type.upgradedFont, #dragdrop.upgradedFont, #time.upgradedFont, #traps.upgradedFont {
+    font-family: 'MendlSerif', serif;
+}
+#type, #time {
+    left: 0;
+}
+#dragdrop, #traps {
+    left: 52%;
+}
+#dragdrop.dragover {
+    color: rgba(255,255,255,0.9);
+}
+@keyframes bgFade {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+@keyframes scrollBg {
+    from { background-position: top center; }
+    to { background-position: bottom center }
+}

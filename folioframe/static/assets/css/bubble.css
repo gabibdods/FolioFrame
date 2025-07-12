@@ -1,0 +1,434 @@
+.bubbleContainer {
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    position: absolute;
+    animation-name: bubblesIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes bubblesIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.bubbleX1 {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY1 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 13px;
+    left: 8px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 3s;
+}
+@keyframes bubbleX1 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(8px); }
+    40% { transform: translateX(12px); }
+    60% { transform: translateX(3px); }
+    80% { transform: translateX(14px); }
+    100% { transform: translateX(2px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX2 {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY2 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 89px;
+    left: 37px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 1s;
+}
+@keyframes bubbleX2 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(2px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(9px); }
+    80% { transform: translateX(14px); }
+    100% { transform: translateX(8px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX3 {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY3 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 75px;
+    left: 21px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 1s;
+}
+@keyframes bubbleX3 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(6px); }
+    40% { transform: translateX(9px); }
+    60% { transform: translateX(4px); }
+    80% { transform: translateX(2px); }
+    100% { transform: translateX(12px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX4 {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY4 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 37px;
+    left: 22px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 1s;
+}
+@keyframes bubbleX4 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(15px); }
+    40% { transform: translateX(9px); }
+    60% { transform: translateX(12px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(2px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX5 {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX5;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY5 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 94px;
+    left: 54px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 3s;
+}
+@keyframes bubbleX5 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(1px); }
+    40% { transform: translateX(9px); }
+    60% { transform: translateX(6px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(9px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX6 {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX6;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY6 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 27px;
+    left: 4px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 2s;
+}
+@keyframes bubbleX6 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(2px); }
+    40% { transform: translateX(9px); }
+    60% { transform: translateX(3px); }
+    80% { transform: translateX(13px); }
+    100% { transform: translateX(5px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX7 {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX7;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY7 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 71px;
+    left: 32px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 1s;
+}
+@keyframes bubbleX7 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(12px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(14px); }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(7px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX8 {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX8;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY8 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 49px;
+    left: 131px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 2s;
+}
+@keyframes bubbleX8 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(2px); }
+    40% { transform: translateX(14px); }
+    60% { transform: translateX(4px); }
+    80% { transform: translateX(15px); }
+    100% { transform: translateX(15px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX9 {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX9;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY9 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 85px;
+    left: 28px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 3s;
+}
+@keyframes bubbleX9 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(13px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(13px); }
+    80% { transform: translateX(15px); }
+    100% { transform: translateX(15px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.bubbleX10 {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translateX(0);
+    animation-name: bubbleX10;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.bubbleY10 {
+    display: inline-block;
+    position: absolute;
+    z-index: 50;
+    top: 92px;
+    left: 136px;
+    animation-name: bubbleY;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: translateY(0);
+    opacity: 0.6;
+    animation-delay: 2s;
+}
+@keyframes bubbleX10 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(10px); }
+    40% { transform: translateX(7px); }
+    60% { transform: translateX(7px); }
+    80% { transform: translateX(3px); }
+    100% { transform: translateX(2px); }
+}
+@keyframes bubbleY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}

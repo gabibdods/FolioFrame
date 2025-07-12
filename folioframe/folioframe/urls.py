@@ -24,4 +24,5 @@ urlpatterns = [
     path('home/', include("foliohome.urls")),
     re_path(r'^(?P<code>\d{3})/$', folioframe.error, name='showErrorTemplate'),
     #path('foliofin/', include("foliofin.urls")),
+    #path('bip/', include("bip.urls")),
 ]

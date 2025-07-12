@@ -1,0 +1,104 @@
+.animalContainer {
+    position: relative;
+    transform: translateX(0);
+    animation-name: whaleTranslate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 70;
+}
+@keyframes whaleTranslate {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(600px); }
+}
+.whalePos {
+    position: absolute;
+    z-index: 10;
+}
+.whalePos.size1 {
+    top: 150px;
+    left: -210px;
+}
+.whalePos.size2 {
+    top: 100px;
+    left: -280px;
+}
+.whalePos.size3 {
+    top: 120px;
+    left: -140px;
+}
+.whalePos.size4 {
+    top: 190px;
+    left: -310px;
+}
+.whalePos.size5 {
+    top: 120px;
+    left: -380px;
+}
+.whaleRotate {
+    position: relative;
+    width: 245px;
+    height: 110px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.whaleRotate.size1 {
+    transform: rotate(0) scale(0.35);
+    animation-name: whaleMovementXLarge;
+}
+@keyframes whaleMovementXLarge {
+    0% { transform: rotate(0) scale(0.35); }
+    100% { transform: rotate(20deg) scale(0.35); }
+}
+.whaleRotate.size2 {
+    transform: rotate(0) scale(0.25);
+    animation-name: whaleMovementLarge;
+}
+@keyframes whaleMovementLarge {
+    0% { transform: rotate(0) scale(0.25); }
+    100% { transform: rotate(20deg) scale(0.25); }
+}
+.whaleRotate.size3 {
+    transform: rotate(0) scale(0.15);
+    animation-name: whaleMovementMedium;
+}
+@keyframes whaleMovementMedium {
+    0% { transform: rotate(0) scale(0.15); }
+    100% { transform: rotate(20deg) scale(0.15); }
+}
+.whaleRotate.size4 {
+    transform: rotate(0) scale(0.1);
+    animation-name: whaleMovementSmall;
+}
+@keyframes whaleMovementSmall {
+    0% { transform: rotate(0) scale(0.1); }
+    100% { transform: rotate(20deg) scale(0.1); }
+}
+.whale {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: radial-gradient(at 40% 20%, var(--ocean1) 0%, var(--ocean1) 35%, var(--ocean2) 35%, var(--ocean2) 60%, var(--ocean2) 70%, var(--ocean3) 70%, var(--ocean3) 100%);
+    clip-path: polygon(15% 0%, 18.5% 20%, 19% 37%, 27% 46.5%, 33% 46.5%, 42.5% 37%, 43% 26.5%, 50.5% 28.5%, 65.5% 17%, 88.5% 12.5%, 97.5% 22.5%, 100% 49.5%, 97% 65.5%, 89.5% 81.5%, 64.5% 86.5%, 43.5% 80%, 23% 59.5%, 15.5% 41.5%, 8% 40%, 1.5% 28.5%, 6.5% 25%, 12.5% 26.5%, 12% 14%);
+}
+.fin {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    z-index: 50;
+    width: 50px;
+    height: 30px;
+    background: var(--ocean3);
+    transform-origin: center top;
+    clip-path: polygon(30% 50%, 60% 0, 100% 0%, 80% 60%, 60% 80%, 0 100%);
+    animation-name: fin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+@keyframes fin {
+    0% { transform: rotate3d(0, 0, 0, 0deg); }
+    100% { transform: rotate3d(1, 1, 1, 30deg); }
+}

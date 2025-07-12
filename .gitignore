@@ -17,6 +17,11 @@ folioframe/*.env
 folioframe/.idea/
 folioframe/.idea/**
 
+folioframe/bip/__pycache__/
+folioframe/bip/__pycache__/**
+folioframe/bip/migrations/
+folioframe/bip/migrations/**
+
 folioframe/foliofin/__pycache__/
 folioframe/foliofin/__pycache__/**
 folioframe/foliofin/migrations/
