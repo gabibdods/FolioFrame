@@ -143,6 +143,4 @@
 .theme-switcher-grid.night-theme #star1,
 .theme-switcher-grid.night-theme #star2,
 .theme-switcher-grid.night-theme #star3,
-.theme-switcher-grid.night-theme #star4 {
-    opacity: 1;
-}
+.theme-switcher-grid.night-theme #star4 { opacity: 1; }

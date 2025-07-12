@@ -36,17 +36,15 @@
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                                 <i class="fa fa-bars"></i>
                             </button>
-                            <a class="navbar-brand">about me</a>
+                            <a class="navbar-brand">home</a>
                         </div>
                         <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                             <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                                <li><a href="{% url 'index' %}#portfolio" smooth-scroll-menu>portfolio</a></li>
-                                <li><a href="{% url 'index' %}#workflow" smooth-scroll-menu>workflow</a></li>
-                                <li><a href="{% url 'index' %}#experience" smooth-scroll-menu>experience</a></li>
-                                <li><a href="{% url 'index' %}#education" smooth-scroll-menu>education</a></li>
-                                <!--<li><a href="{% url 'index' %}#internships" smooth-scroll-menu>internships</a></li>-->
-                                <li><a href="{% url 'index' %}#contact" smooth-scroll-menu>contact me</a></li>
-                                <li><a href="{% url 'index' %}#about" smooth-scroll-menu>about</a></li>
+                                <li class="smooth-menu active"><a href="#portfolio" smooth-scroll-menu>portfolio</a></li>
+                                <li class="smooth-menu active"><a href="#experience" smooth-scroll-menu>experience</a></li>
+                                <li class="smooth-menu active"><a href="#education" smooth-scroll-menu>education</a></li>
+                                <li class="smooth-menu active"><a href="#contact" smooth-scroll-menu>contact me</a></li>
+                                <li class="smooth-menu active"><a href="#about" smooth-scroll-menu>about</a></li>
                                 <li>
                                     <div class="flip-body">
                                         <button class="theme-switcher-grid" id="theme-switcher-grid" aria-label="Switch theme">

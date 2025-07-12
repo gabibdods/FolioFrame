@@ -4,9 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
-* {
-    font-family: 'Bahnschrift' !important;
-}
+* { font-family: 'Bahnschrift', serif; }
 html, body {
     height: 100%;
     margin: 0;
@@ -57,17 +55,9 @@ button {
     color: #111;
     cursor: pointer;
 }
-button:hover {
-    background: linear-gradient(300deg, transparent, #BDDFE1);
-}
+button:hover { background: linear-gradient(300deg, transparent, #BDDFE1); }
 @keyframes bgFade {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
 }

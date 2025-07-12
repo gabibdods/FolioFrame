@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', themeByTime);
 setInterval(themeByTime, 2*10*60*1000);
 function themeByTime () {
     const h = new Date().getHours();
-    if (6 <= h && h < 21) {
+    if (h <= 1 || 10 <= h) {
         document.body.style.backgroundColor = "var(--bg-color-light)";
         document.getElementById("navbar").style.backgroundColor = "var(--bg-color-light)";
         document.getElementById("venn-container").style.backgroundImage = "radial-gradient(#fff 45%, transparent 55%)";

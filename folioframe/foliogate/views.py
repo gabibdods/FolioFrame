@@ -6,7 +6,6 @@ from django_ratelimit.decorators import ratelimit
 import requests
 import foliohome.views
 
-
 @ratelimit(key='ip', rate='3/m', block=True)
 def index(request):
     if not request.session.get('passed_captcha'):

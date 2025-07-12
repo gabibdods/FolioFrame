@@ -1,10 +1,7 @@
-from django.conf import settings
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.utils.deprecation import MiddlewareMixin
 from django.urls import reverse
-import folioframe.views
 import foliogate.views
 
 class Block:
