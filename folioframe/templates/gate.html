@@ -7,9 +7,8 @@
 {% endblock %}
 
 {% block main %}
-    <main>
-        <div class="scaler">
-            <div id="container">
+    <div class="scaler">
+        <div id="container">
             <h1>Verify You're Human</h1>
             <p>Click the button below to continue.</p>
             <form method="post" action="{% url 'gate' %}">
@@ -18,8 +17,7 @@
                 <button type="submit">Verify & Continue</button>
             </form>
         </div>
-        </div>
-    </main>
+    </div>
 {% endblock %}
 
 {% block script %}

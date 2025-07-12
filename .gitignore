@@ -23,6 +23,8 @@ folioframe/foliofin/migrations/
 folioframe/foliofin/migrations/**
 
 folioframe/folioframe/settings_dev.py
+folioframe/.run/
+folioframe/.run/FolioFrame.run.xml
 folioframe/folioframe/__pycache__/
 folioframe/folioframe/__pycache__/**
 

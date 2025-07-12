@@ -8,6 +8,7 @@
     --bg-color-before-clear: #1c2135e0;
     --bg-color-before-clearest: #1c213530;
     --bg-color-light-start: #f0f0e8;
+    --bg-color-light-start-overlay: #f0f0e8e0;
     --bg-color-light-start-2: #b2c1ce;
     --txt-color-darkmost: #525862;
     --txt-color-darkest: #878a81;
@@ -158,16 +159,21 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     position: relative;
     background-size: cover;
     background: url(../images/about/background.png) no-repeat center;
+    transition: background-color 1s ease-in-out;
     height: 890px;
 }
-.welcome-hero:before {
-    position:absolute;
-    content: " ";
-    top:0;
-    left:0;
-    background: var(--bg-color-before-clear);
-    width:100%;
-    height:100%;
+.welcome-hero::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.5s ease-in-out;
+    background-color: var(--bg-color-light-start-overlay);
+}
+.welcome-hero.night-theme::before {
+    background-color: var(--bg-color-before-clear);
 }
 .header-text h2 {
     color: #fff;
@@ -239,7 +245,7 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     position:absolute;
     height:100%;
     width:100%;
-    background: var(--bg-color-before-clear);
+    background: var(--bg-color-light-start-overlay);
     display:flex;
     align-items:center;
     text-transform: uppercase;
@@ -250,8 +256,9 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
 }
 .isotope-overlay a {
     display: inline-block;
-    color: #fff;
-    font-size: 14px;
+    color: var(--main-color-highlight);
+    font-weight: bold;
+    font-size: 16px;
     text-align: center;
 }
 .isotope .item:hover .isotope-overlay {
@@ -329,14 +336,14 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     text-transform: uppercase;
 }
 .main-timeline { position: relative; }
-.main-timeline:before {
+.main-timeline::before {
     content: "";
     width: 2px;
     height: 84%;
     background: var(--bg-color-light-start-2);
     position: absolute;
     top: 1.5%;
-    left: 45.8%;
+    left: 46%;
     z-index: -1;
 }
 .main-timeline .timeline { position: relative; }

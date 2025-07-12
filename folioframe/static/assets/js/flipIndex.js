@@ -1,5 +1,8 @@
 window.addEventListener('DOMContentLoaded', themeByTime);
-setInterval(themeByTime, 2*10*60*1000);
+setInterval(themeByTime, 20*60*1000);
+const overlays = document.getElementsByClassName("isotope-overlay");
+const overlaysLength = document.getElementsByClassName("isotope-overlay").length;
+
 function themeByTime () {
     const h = new Date().getHours();
     if (h <= 1 || 10 <= h) {
@@ -12,6 +15,8 @@ function themeByTime () {
         document.getElementById("venn-circle2").style.backgroundColor = "rgba(255, 0, 255, 0.5)";
         document.getElementById("venn-circle3").style.mixBlendMode = "multiply";
         document.getElementById("venn-circle3").style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+        for(let i = 0; i < overlaysLength; i++) { overlays[i].style.background = "var(--bg-color-light-start-overlay)"; }
+        document.querySelector(".welcome-hero").classList.remove("night-theme");
         document.getElementById("theme-switcher-grid").classList.remove("night-theme");
     } else {
         document.body.style.backgroundColor = "var(--bg-color-dark)";
@@ -23,6 +28,8 @@ function themeByTime () {
         document.getElementById("venn-circle2").style.backgroundColor = "rgba(255, 0, 255, 0.7)";
         document.getElementById("venn-circle3").style.mixBlendMode = "overlay";
         document.getElementById("venn-circle3").style.backgroundColor = "rgba(0, 255, 255, 0.7)";
+        for(let i = 0; i < overlaysLength; i++) { overlays[i].style.background = "var(--bg-color-light-start-overlay)"; }
+        document.querySelector(".welcome-hero").classList.add("night-theme");
         document.getElementById("theme-switcher-grid").classList.add("night-theme");
     }
 }
@@ -37,4 +44,6 @@ document.getElementById("theme-switcher-grid").addEventListener("click", functio
     document.getElementById("venn-circle2").style.backgroundColor = this.classList.contains("night-theme") ? "rgba(255, 0, 255, 0.7)" : "rgba(255, 0, 255, 0.5)";
     document.getElementById("venn-circle3").style.mixBlendMode = this.classList.contains("night-theme") ? "overlay" : "multiply";
     document.getElementById("venn-circle3").style.backgroundColor = this.classList.contains("night-theme") ? "rgba(0, 255, 255, 0.7)" : "rgba(255, 255, 0, 0.5)";
+    for(let i = 0; i < overlaysLength; i++) { overlays[i].style.background = this.classList.contains("night-theme") ? "var(--bg-color-before-clear)" : "var(--bg-color-light-start-overlay)"; }
+    document.querySelector(".welcome-hero").classList.toggle("night-theme");
 });
