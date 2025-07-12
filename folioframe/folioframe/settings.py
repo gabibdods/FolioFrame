@@ -13,7 +13,7 @@ import os
 import sys
 from pathlib import Path
 # Version
-APP_VERSION = "3.5.8"
+APP_VERSION = "4.0.9"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key
