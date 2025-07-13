@@ -12,17 +12,12 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="header-text">
-                        <h2>blink faster <span>!</span></h2>
-                        <p>you might see something new and quicker :)</p>
-                        <p>nota bene: http status 206 only refreshes a part of the page !</p>
+                        <h2 id="welcome-header">blink faster <span>!</span></h2>
+                        <p id="welcome-desc">you might see something new and quicker :)</p>
+                        <p id="welcome-desc">nota bene: http status 206 only refreshes a part of the page !</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script src="{% static 'assets/js/flip.js' %}"></script>
 {% endblock %}

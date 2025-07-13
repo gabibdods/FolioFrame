@@ -12,17 +12,12 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="header-text">
-                        <h2>crickets<span>...</span></h2>
-                        <p>even in the fog of war, a ta... no that was just the wind :)</p>
-                        <p>nota bene: http status 204 nullifies the redirect !</p>
+                        <h2 id="welcome-header">crickets<span>...</span></h2>
+                        <p id="welcome-desc">even in the fog of war, a ta... no that was just the wind :)</p>
+                        <p id="welcome-desc">nota bene: http status 204 nullifies the redirect !</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script src="{% static 'assets/js/flip.js' %}"></script>
 {% endblock %}

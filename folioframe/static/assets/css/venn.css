@@ -8,12 +8,14 @@
     background-image: radial-gradient(#fff 45%, transparent 55%);
     height: 100vh;
     width: 100vw;
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
     position: relative;
     margin: 0;
     overflow: hidden;
+    transform: translateX(-50%);
+    left: 50%;
 }
 .venn-box {
     height: var(--venn-h);
@@ -96,9 +98,9 @@
     border: 2px solid #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     animation: float var(--venn-d) ease-in-out infinite;
-    transform: translate(var(--start-x), var(--start-y));
-    left: 43%;
-    top: 43%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 }
 .venn-music { animation: move-in-music var(--venn-d) ease-in-out infinite alternate; }
 .venn-french { animation: move-in-french var(--venn-d) ease-in-out infinite alternate; }
@@ -111,38 +113,38 @@
 .venn-catalan { animation: move-in-catalan var(--venn-d) ease-in-out infinite alternate; }
 @keyframes move-in-arabic {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(34.72%, 196.96%); }
+    to { transform: translate(-15.28%, 146.96%); }
 }
 @keyframes move-in-catalan {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(153.20%, 128.56%); }
+    to { transform: translate(103.20%, 78.56%); }
 }
 @keyframes move-in-polish {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(-188.00%, 68.40%); }
+    to { transform: translate(-238.00%, 18.40%); }
 }
 @keyframes move-in-music {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(-100.00%, 173.20%); }
+    to { transform: translate(-150.00%, 123.20%); }
 }
 @keyframes move-in-italian {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(200%, 0%); }
+    to { transform: translate(150%, -50%); }
 }
 @keyframes move-in-spanish {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(-188.00%, -68.40%); }
+    to { transform: translate(-238.00%, -118.40%); }
 }
 @keyframes move-in-portuguese {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(153.20%, -128.56%); }
+    to { transform: translate(103.20%, -178.56%); }
 }
 @keyframes move-in-french {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(34.72%, -196.96%); }
+    to { transform: translate(-15.28%, -246.96%); }
 }
 @keyframes move-in-english {
     from { transform: translate(var(--start-x), var(--start-y)); }
-    to { transform: translate(-100.00%, -173.20%); }
+    to { transform: translate(-150.00%, -223.20%); }
 }
 .surpriser { display: none; }

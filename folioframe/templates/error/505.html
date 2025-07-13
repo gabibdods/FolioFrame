@@ -12,16 +12,11 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="header-text">
-                        <h2>just a moment <span>!</span></h2>
-                        <p>it looks like I have some catching up to do :(</p>
+                        <h2 id="welcome-header">just a moment <span>!</span></h2>
+                        <p id="welcome-desc">it looks like I have some catching up to do :(</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script src="{% static 'assets/js/flip.js' %}"></script>
 {% endblock %}

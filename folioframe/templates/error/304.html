@@ -12,17 +12,12 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="header-text">
-                        <h2>no worries <span>!</span></h2>
-                        <p>it'll be here before, now and after :)</p>
-                        <p>nota bene: if the served ressources have not been changed, the redirect is nullified !</p>
+                        <h2 id="welcome-header">no worries <span>!</span></h2>
+                        <p id="welcome-desc">it'll be here before, now and after :)</p>
+                        <p id="welcome-desc">nota bene: if the served ressources have not been changed, the redirect is nullified !</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script src="{% static 'assets/js/flip.js' %}"></script>
 {% endblock %}
