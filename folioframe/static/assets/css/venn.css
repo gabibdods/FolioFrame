@@ -61,7 +61,8 @@
 }
 .venn-wrapper2 .venn-label {
     top: -6%;
-    left: 43%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .venn-wrapper3 .venn-label {
     top: 77%;

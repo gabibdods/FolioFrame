@@ -157,7 +157,7 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     align-items: center;
     justify-content: center;
     position: relative;
-    background: url(../images/about/cloud3.svg);
+    background: url(../images/backgrounds/cloud3.svg);
     transition: background-color 1s ease-in-out;
     height: 890px;
 }
