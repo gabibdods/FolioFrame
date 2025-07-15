@@ -1,3 +1,7 @@
+:root {
+    --fade-color: #e88a45;
+    --fade-border: #e88a4588;
+}
 @font-face {
     font-family: 'Bahnschrift';
     src: url("../fonts/gate.ttf") format('truetype');
@@ -19,6 +23,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    color: #222;
 }
 #cloud {
     display: block;
@@ -41,25 +46,24 @@ body {
     padding: 5rem;
     font-size: 2rem;
     font-weight: bold;
-    background: linear-gradient(270deg, #E2ECEB88, #95CAD888, transparent, transparent);
-    border: 1px solid #ccc;
+    background: linear-gradient(180deg, var(--fade-color), transparent);
+    border: 1px solid var(--fade-border);
     border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px var(--fade-border);
     animation: bgFade 12s ease infinite;
     display: inline-block;
 }
 button {
     padding: 2rem;
     font-size: 1.5rem;
-    background: linear-gradient(270deg, #BDDFE188, transparent, transparent);
-    border: 1px solid #BDDFE1;
+    background: linear-gradient(180deg, var(--fade-color), transparent);
+    border: 1px solid var(--fade-border);
     border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px var(--fade-border);
     animation: bgFade 12s ease infinite;
-    color: #111;
     cursor: pointer;
 }
-button:hover { background: linear-gradient(300deg, transparent, #BDDFE1); }
+button:hover { background: linear-gradient(0deg, var(--fade-color), transparent); }
 @keyframes bgFade {
     0% { background-position: 0 50%; }
     50% { background-position: 100% 50%; }

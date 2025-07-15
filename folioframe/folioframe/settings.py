@@ -12,8 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+
 # Version
-APP_VERSION = "4.1.3"
+APP_VERSION = "4.2.2"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key
@@ -84,11 +85,11 @@ with open(RECAPTCHA_SECRET_KEY_PATH) as RECAPTCHA_SECRET_KEY_FILE:
     RECAPTCHA_SECRET_KEY = RECAPTCHA_SECRET_KEY_FILE.read().strip()
 # WSGI & Gunicorn
 WSGI_APPLICATION = 'folioframe.wsgi.application'
-SECURE_SSL_REDIRECT = False # Trust HTTPS Redirect by Nginx
+SECURE_SSL_REDIRECT = False # Reverse-Proxy Nginx configured to redirect all traffic to HTTPS
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') #('HTTP_X_FORWARDED_PROTO', 'https') FOR PRODUCTION, None FOR TEST
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # HTTPS
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True

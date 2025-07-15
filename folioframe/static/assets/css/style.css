@@ -50,15 +50,15 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: var(--txt-color-darker);
+	color: var(--txt-color-dark);
 	font-size: 16px;
 	font-family: 'Poppins', serif;
 	text-transform: capitalize;
 }
 p {
 	margin: 0;
-	line-height: 1.8;
 	color: var(--txt-color-dark);
+	line-height: 1.8;
 	font-size: 14px;
 	font-family: 'Poppins', serif;
 }
@@ -157,7 +157,7 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     align-items: center;
     justify-content: center;
     position: relative;
-    background: url(../images/backgrounds/cloud3.svg);
+    background: url(../images/backgrounds/cloud1.svg);
     transition: background-color 1s ease-in-out;
     height: 890px;
 }
@@ -180,7 +180,6 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     text-transform: uppercase;
     line-height: 1.5;
     transition: color 0.5s ease-in-out;
-	color: var(--txt-color-darker);
 }
 #welcome-header.night-theme { color: #fff; }
 .header-text h2 span { color: var(--main-color-highlight); }
@@ -191,7 +190,6 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     margin: 30px 0 60px;
     letter-spacing: 1px;
     transition: color 0.5s ease-in-out;
-	color: var(--txt-color-darker);
 }
 #welcome-desc.night-theme { color: #fff; }
 .header-text a {
@@ -350,6 +348,9 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     z-index: -1;
 }
 .main-timeline .timeline { position: relative; }
+.timeline-content {
+    padding: 3px;
+}
 .timeline-content span>i,
 .experience-time span>i {
     color: var(--main-color-highlight);
@@ -519,25 +520,25 @@ span.single-timeline-horizontal.spacial-horizontal-line { width: 88px; }
 .single-profile.profile-no-border { border-right:transparent; }
 .profile-border { border-bottom: 1px solid #b2c1ce; }
 .single-profile-overlay {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     text-transform: capitalize;
-    justify-content:center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
     content: " ";
-    width:100%;
+    width: 100%;
     height: 100%;
     background: var(--main-color-highlight);
     background: linear-gradient(to right, var(--main-color-highlight) 0, var(--support-color-hightlight) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d92cf9', endColorstr='#b636ff',GradientType=1 );
-    transform:scale(0);
+    transform: scale(0);
     transition: 0.5s;
 }
 .single-profile:hover .single-profile-overlay {
-    transform:scale(1);
-    top:0;
+    transform: scale(1);
+    top: 0;
 }
 .single-profile:hover .profile-icon-name,
 .single-profile:hover .profile-txt a>i { color: #fff; }
