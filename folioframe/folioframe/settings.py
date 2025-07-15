@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 # Version
-APP_VERSION = "4.2.2"
+APP_VERSION = "4.3.5"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key

@@ -26,3 +26,7 @@ urlpatterns = [
     #path('foliofin/', include("foliofin.urls")),
     #path('bip/', include("bip.urls")),
 ]
+handler400 = 'folioframe.views.error400'
+handler403 = 'folioframe.views.error403'
+handler404 = 'folioframe.views.error404'
+handler500 = 'folioframe.views.error500'
