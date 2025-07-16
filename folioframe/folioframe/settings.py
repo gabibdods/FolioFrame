@@ -14,18 +14,17 @@ import sys
 from pathlib import Path
 
 # Version
-APP_VERSION = "4.3.5"
+APP_VERSION = "4.4.7"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key
 SECRET_KEY_PATH = os.path.join(BASE_DIR, 'envSecretKey.env')
 with open(SECRET_KEY_PATH) as SECRET_KEY_FILE:
     SECRET_KEY = SECRET_KEY_FILE.read().strip()
-# Debug must be turned off for production
+# Debug
 DEBUG = False
 # Allowed urls
 ALLOWED_HOSTS = [
-    "localhost",
     "127.0.0.1",
     "gabrieldigitprint.work",
 ]
@@ -78,7 +77,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #reCAPTCHA
 RECAPTCHA_SITE_KEY = '6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph'
-RECAPTCHA_DEFAULT_ACTION = 'gate'
+RECAPTCHA_DEFAULT_ACTION = 'foliogate'
 RECAPTCHA_SCORE_THRESHOLD = 0.8
 RECAPTCHA_SECRET_KEY_PATH = os.path.join(BASE_DIR, 'envReCAPTCHASecretKey.env')
 with open(RECAPTCHA_SECRET_KEY_PATH) as RECAPTCHA_SECRET_KEY_FILE:
@@ -110,13 +109,22 @@ if USE_SQLITE_FOR_TESTS:
         }
     }
 else:
+    POSTGRESQL_USER_PATH = os.path.join(BASE_DIR, 'envPostgreSQLUser.env')
+    with open(POSTGRESQL_USER_PATH) as POSTGRESQL_USER_FILE:
+        POSTGRESQL_USER = POSTGRESQL_USER_FILE.read().strip()
+    POSTGRESQL_PASSWORD_PATH = os.path.join(BASE_DIR, 'envPostgreSQLPassword.env')
+    with open(POSTGRESQL_PASSWORD_PATH) as POSTGRESQL_PASSWORD_FILE:
+        POSTGRESQL_PASSWORD = POSTGRESQL_PASSWORD_FILE.read().strip()
+    POSTGRESQL_HOST_PATH = os.path.join(BASE_DIR, 'envPostgreSQLHost.env')
+    with open(POSTGRESQL_HOST_PATH) as POSTGRESQL_HOST_FILE:
+        POSTGRESQL_HOST = POSTGRESQL_HOST_FILE.read().strip()
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'folioframe',
-            'USER': 'mypostgreuser',
-            'PASSWORD': 'mypostgrepass',
-            'HOST': 'localhost',
+            'USER': POSTGRESQL_USER,
+            'PASSWORD': POSTGRESQL_PASSWORD,
+            'HOST': POSTGRESQL_HOST,
             'PORT': '5432',
         }
     }

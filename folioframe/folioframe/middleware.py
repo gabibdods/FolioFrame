@@ -29,8 +29,8 @@ class Authenticate:
         else:
             if request.path.startswith('/428'):
                 return render(request, 'error/428.html')
-            if request.path.startswith('/gate'):
-                return render(request, 'gate.html')
+            if request.path.startswith('/foliogate'):
+                return render(request, 'foliogate/gate.html')
             if request.session.get('checked_js'):
                 if request.COOKIES.get('js_enabled'):
                     if request.session.get('passed_captcha'):

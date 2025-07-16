@@ -3,5 +3,5 @@ import foliogate.views as foliogate
 
 urlpatterns = [
     path('', foliogate.index, name='index'),
-    path('gate/', foliogate.gate, name='gate'),
+    path('foliogate/', foliogate.gate, name='gate'),
 ]

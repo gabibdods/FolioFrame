@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "foliohome/base.html" %}
 {% load static %}
 
 {% block head %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'assets/css/response.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/../../static/css/response.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -23,5 +23,5 @@
 
 {% block script %}
     {{ block.super }}
-    <script src="{% static 'assets/js/flip.js' %}"></script>
+    <script src="{% static 'assets/../../static/js/flip.js' %}"></script>
 {% endblock %}

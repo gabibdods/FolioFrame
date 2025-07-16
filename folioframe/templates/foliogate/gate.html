@@ -1,4 +1,4 @@
-{% extends "basis.html" %}
+{% extends "foliogate/basis.html" %}
 {% load static %}
 
 {% block head %}
@@ -22,5 +22,5 @@
 
 {% block script %}
     {{ block.super }}
-    <script src="{% static 'assets/js/gate.js' %}"></script>
+    <script src="{% static 'assets/../../static/js/gate.js' %}"></script>
 {% endblock %}

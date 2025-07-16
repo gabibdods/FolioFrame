@@ -9,12 +9,12 @@
     {% block head %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="shortcut icon" type="image/icon" href="{% static 'assets/images/favicon.png' %}"/>
-        <link rel="stylesheet" href="{% static 'assets/css/gate.css' %}">
+        <link rel="shortcut icon" type="image/icon" href="{% static 'assets/../../static/images/favicon.png' %}"/>
+        <link rel="stylesheet" href="{% static 'assets/../../static/css/gate.css' %}">
     {% endblock %}
     </head>
     <body>
-        <img src="{% static 'assets/images/backgrounds/cloud2.svg' %}" alt="cloud" id="cloud"/>
+        <img src="{% static 'assets/../../static/images/backgrounds/cloud2.svg' %}" alt="cloud" id="cloud"/>
         <header>
         {% block header %}
         {% endblock %}
@@ -28,7 +28,7 @@
         {% endblock %}
         </footer>
         {% block script %}
-        <script src="{% static 'assets/js/antizoom.js' %}"></script>
+        <script src="{% static 'assets/../../static/js/antizoom.js' %}"></script>
         {% endblock %}
     </body>
 </html>

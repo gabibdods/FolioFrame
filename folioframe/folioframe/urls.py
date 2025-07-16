@@ -14,19 +14,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path, re_path
-import folioframe.views as folioframe
+import folioframe.views
 
 urlpatterns = [
     path('', include("foliogate.urls")),
     path('admin/', admin.site.urls),
     path('home/', include("foliohome.urls")),
-    re_path(r'^(?P<code>\d{3})/$', folioframe.error, name='showErrorTemplate'),
-    #path('foliofin/', include("foliofin.urls")),
-    #path('bip/', include("bip.urls")),
+    re_path(r'^(?P<code>\d{3})/$', folioframe.views.error, name='showErrorTemplate'),
 ]
-handler400 = 'folioframe.views.error400'
-handler403 = 'folioframe.views.error403'
-handler404 = 'folioframe.views.error404'
-handler500 = 'folioframe.views.error500'
+if getattr(settings, "USE_DEV_URLS", True):
+    urlpatterns += [
+        path('foliofin/', include("foliofin.urls")),
+        path('bip/', include("bip.urls")),
+    ]
+handler400 = 'folioframe.views.custom_400_view'
+handler403 = 'folioframe.views.custom_403_view'
+handler404 = 'folioframe.views.custom_404_view'
+handler500 = 'folioframe.views.custom_500_view'

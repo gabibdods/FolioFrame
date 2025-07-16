@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django_ratelimit.decorators import ratelimit
@@ -29,7 +28,7 @@ def gate(request):
             return redirect(reverse(foliohome.views.index))
         else:
             return redirect('/403')
-    return render(request, 'gate.html', status=428)
+    return render(request, 'foliogate/gate.html', status=428)
 
 @ratelimit(key='ip', rate='3/m', block=False)
 def block(request):
