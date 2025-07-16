@@ -25,7 +25,7 @@ urlpatterns = [
     path('home/', include("foliohome.urls")),
     re_path(r'^(?P<code>\d{3})/$', folioframe.views.error, name='showErrorTemplate'),
 ]
-if getattr(settings, "USE_DEV_URLS", True):
+if getattr(settings, "USE_DEV_URLS", False):
     urlpatterns += [
         path('foliofin/', include("foliofin.urls")),
         path('bip/', include("bip.urls")),

@@ -84,7 +84,7 @@ with open(RECAPTCHA_SECRET_KEY_PATH) as RECAPTCHA_SECRET_KEY_FILE:
     RECAPTCHA_SECRET_KEY = RECAPTCHA_SECRET_KEY_FILE.read().strip()
 # WSGI & Gunicorn
 WSGI_APPLICATION = 'folioframe.wsgi.application'
-SECURE_SSL_REDIRECT = False # Reverse-Proxy Nginx configured to redirect all traffic to HTTPS
+SECURE_SSL_REDIRECT = False # Reverse Proxy Nginx configured to redirect all traffic to HTTPS
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
