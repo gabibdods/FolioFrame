@@ -8,6 +8,9 @@
 !*.nginx
 !*.gunicorn
 
+!BIP/
+!BIP/**
+
 !folioframe/
 !folioframe/**
 
@@ -42,3 +45,6 @@ folioframe/foliohome/__pycache__/
 folioframe/foliohome/__pycache__/**
 folioframe/foliohome/migrations/
 folioframe/foliohome/migrations/**
+
+folioframe/staticfiles/
+folioframe/staticfiles/**

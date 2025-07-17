@@ -9,6 +9,7 @@ dragdrop.addEventListener('dragover', (e) => {
 dragdrop.addEventListener('dragleave', () => {
     dragdrop.classList.remove('dragover');
 });
+/*
 dragdrop.addEventListener('drop', (e) => {
     e.preventDefault();
     dragdrop.classList.remove('dragover');
@@ -18,12 +19,12 @@ dragdrop.addEventListener('drop', (e) => {
 input.addEventListener('change', () => {
     handleFiles(input.files);
 });
-function handleFiles(files) {                   //change this ofc
+function handleFiles(files) {
     for (const file of files) {
         console.log(file.name);
     }
 }
-
+*/
 const textArea = document.getElementById('text');
 const type = document.getElementById('type');
 const time = document.getElementById('time');
@@ -49,7 +50,6 @@ textArea.addEventListener('input', () => {
     }
     client.style.paddingBottom = `${newPadding * 16 + 248}px`;
 });
-
 let passed = 0;
 function scalePage() {
     const scaleX = window.innerWidth / 1920;

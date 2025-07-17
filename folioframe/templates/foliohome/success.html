@@ -3,7 +3,7 @@
 
 {% block head %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'assets/../../static/css/response.css' %}">
+    <link rel="stylesheet" href="{% static 'css/response.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -19,9 +19,4 @@
             </div>
         </div>
     </section>
-{% endblock %}
-
-{% block script %}
-    {{ block.super }}
-    <script src="{% static 'assets/../../static/js/flip.js' %}"></script>
 {% endblock %}

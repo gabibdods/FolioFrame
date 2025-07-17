@@ -1,0 +1,3 @@
+[submodule "BIP"]
+	path = BIP
+	url = https://github.com/gabibdods/BIP.git

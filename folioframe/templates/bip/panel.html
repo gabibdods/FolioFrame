@@ -6,14 +6,15 @@
         <title>Before It's Printed</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/panel.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/bubble.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/fish.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/horizon.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/ray.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/sun.css' %}">
-        <link rel="stylesheet" href="{% static 'assets/../../static/css/sky.css' %}">
+		<link rel="shortcut icon" type="image/icon" href="{% static 'images/favicon.png' %}"/>
+        <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bubble.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fish.css' %}">
+        <link rel="stylesheet" href="{% static 'css/horizon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ray.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sun.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sky.css' %}">
     </head>
     <body>
         <section class="canvas" id="interface">
@@ -136,29 +137,36 @@
                     <h1 id="clientTitle">Before It's Printed</h1>
                     <h1 id="clientStatus"></h1>
                     <div id="container">
-                        <label for="text">
-                            <textarea class="glass-button" id="text" placeholder="Any details: topics, type, time, tools allowed?"></textarea>
-                        </label>
-                        <label for="type"> <!--QCM, smallDev,longDev, PREMIUM: cheatSheet-->
-                            <input class="glass-button" id="type" type="text" placeholder="Any kind?">
-                        </label>
-                        <div class="glass-button" id="dragdrop">
-                            <span id="explore">Any presets?</span>
-                            <label for="input">
-                                <input class="glass-button" type="file" id="input" hidden />
+                        <form id="bip-form" enctype="multipart/form-data">
+                            <label for="text">
+                                <textarea class="glass-button" id="text" placeholder="Any details: topics, type, time, tools allowed?"></textarea>
                             </label>
-                        </div>
-                        <label for="time">
-                            <input class="glass-button" id="time" type="text" placeholder="Any time?">
-                        </label>
-                        <label for="traps">
-                            <input class="glass-button" id="traps" type="text" placeholder="Any catch?">
-                        </label>
+                            <label for="type">
+                                <input class="glass-button" id="type" type="text" placeholder="Any kind?">
+                            </label>
+                            <div class="glass-button" id="dragdrop">
+                                <span id="explore">Any presets?</span>
+                                <label for="input">
+                                    <input class="glass-button" type="file" id="input" hidden required/>
+                                </label>
+                            </div>
+                            <label for="time">
+                                <input class="glass-button" id="time" type="text" placeholder="Any time?">
+                            </label>
+                            <label for="traps">
+                                <input class="glass-button" id="traps" type="text" placeholder="Any catch?">
+                            </label>
+                            <label for="submit">
+                                <button type="submit">Submit</button>
+                            </label>
+                        </form>
+                        <pre id="output"></pre>
                     </div>
                 </div>
             </section>
         </main>
     </body>
-		<script src="{% static 'assets/../../static/js/panel.js' %}"></script>
-		<script src="{% static 'assets/../../static/js/activate.js' %}"></script>
+		<script src="{% static 'js/panel.js' %}"></script>
+		<script src="{% static 'js/activate.js' %}"></script>
+		<script src="{% static 'js/bip.js' %}"></script>
 </html>
