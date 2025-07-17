@@ -1,18 +1,10 @@
-*
+*.postgresql
 
-!.gitignore
-!*.yml
-!*.txt
-!*.pdf
-!README.md
-!*.nginx
-!*.gunicorn
+folioenv/
+folioenv/**
 
-!BIP/
-!BIP/**
-
-!folioframe/
-!folioframe/**
+foliovenv/
+foliovenv/**
 
 folioframe/*.sqlite3
 folioframe/*.env
