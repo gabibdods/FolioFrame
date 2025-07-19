@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django_ratelimit.decorators import ratelimit
@@ -27,11 +28,11 @@ def gate(request):
             request.session['passed_captcha'] = True
             return redirect(reverse(foliohome.views.index))
         else:
-            return redirect('/403')
-    return render(request, 'foliogate/gate.html', status=428)
+            return HttpResponse(status=403)
+    return render(request, 'foliogate/gate.html', status=202)
 
 @ratelimit(key='ip', rate='3/m', block=False)
 def block(request):
     if getattr(request, 'limited', False):
-        return render(request, 'error/429.html', status=429)
+        return HttpResponse(status=429)
     return None

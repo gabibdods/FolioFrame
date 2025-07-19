@@ -1,4 +1,5 @@
 from django.core.mail import send_mail
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
@@ -8,7 +9,7 @@ from django_ratelimit.decorators import ratelimit
 @ratelimit(key='ip', rate='10/h', block=True)
 def index(request):
     if request.POST.get('surprise'):
-        return redirect('/403')
+        return HttpResponse(status=412)
     return render(request, 'foliohome/index.html', status=202)
 
 @ratelimit(key='ip', rate='10/h', block=True)
@@ -35,5 +36,5 @@ def success(request):
 @ratelimit(key='ip', rate='10/h', block=False)
 def block(request):
     if getattr(request, 'limited', False):
-        return redirect('/429')
+        return HttpResponse(status=429)
     return None

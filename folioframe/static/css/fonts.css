@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'FerroRosso';
+    src: url("../fonts/title.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Babel';
+    src: url("../fonts/premiumDesc.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Freedom';
+    src: url("../fonts/interfaceButton.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Premium';
+    src: url("../fonts/premium.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Arcade';
+    src: url("../fonts/interfaceDesc.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger';
+    src: url("../fonts/premiumButton.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MendlSerif';
+    src: url("../fonts/premiumInput.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

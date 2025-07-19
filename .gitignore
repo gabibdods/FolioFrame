@@ -1,3 +1,6 @@
+.idea/
+/.run
+
 *.postgresql
 
 folioenv/
@@ -11,6 +14,8 @@ folioframe/*.env
 
 folioframe/.idea/
 folioframe/.idea/**
+folioframe/__pycache__/
+folioframe/__pycache__/**
 
 folioframe/bip/__pycache__/
 folioframe/bip/__pycache__/**

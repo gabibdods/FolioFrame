@@ -5,19 +5,59 @@
     <head>
         <title>Before It's Printed</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="shortcut icon" type="image/icon" href="{% static 'images/favicon.png' %}"/>
-        <link rel="stylesheet" href="{% static 'css/panel.css' %}">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bubble.css' %}">
-        <link rel="stylesheet" href="{% static 'css/fish.css' %}">
-        <link rel="stylesheet" href="{% static 'css/horizon.css' %}">
-        <link rel="stylesheet" href="{% static 'css/ray.css' %}">
-        <link rel="stylesheet" href="{% static 'css/sun.css' %}">
-        <link rel="stylesheet" href="{% static 'css/sky.css' %}">
+		<link rel="shortcut icon" type="image/icon" href="{% static "images/favicon.png" %}"/>
+        <link rel="stylesheet" href="{% static "css/panel.css" %}">
+        <link rel="stylesheet" href="{% static "css/fonts.css" %}">
+        <link rel="stylesheet" href="{% static "css/standard.css" %}">
+        <link rel="stylesheet" href="{% static "css/premium.css" %}">
     </head>
     <body>
-        <section class="canvas" id="interface">
+        <main id="main">
+            <section class="glass" id="top">
+                <div class="panel" id="gate">
+                    <h1 class="header" id="gateTitle">Before It's Printed</h1>
+                    <h1 class="level" id="gateLevel"></h1>
+                    <p class="message" id="gateMessage">The best way of getting a good grade<br>is to already have it</p>
+                    <a class="button" id="enter" href="#middle">enter</a>
+                    <a class="button" id="activate">activate</a>
+                </div>
+            </section>
+            <section class="glass" id="middle">
+                <div class="panel" id="client">
+                    <h1 class="header" id="clientTitle">Before It's Printed</h1>
+                    <h1 class="level" id="clientLevel"></h1>
+                    <form id="clientMessage" enctype="multipart/form-data">
+                        <label for="text">
+                            <textarea class="button" id="text" placeholder="Any details: topics, type, time, tools allowed?"></textarea>
+                        </label>
+                        <label for="type">
+                            <input class="button" id="type" type="text" placeholder="Any kind?">
+                        </label>
+                        <label>
+                            <span class="button" id="dragdropPlaceholder">Any presets?</span>
+                            <input id="input" type="file" hidden>
+                        </label>
+                        <label for="time">
+                            <input class="button" id="time" type="text" placeholder="Any time?">
+                        </label>
+                        <label for="traps">
+                            <input class="button" id="traps" type="text" placeholder="Any catch?">
+                        </label>
+                        <label for="submit">
+                            <input class="button" id="submit" type="submit" value="Submit">
+                        </label>
+                    </form>
+                </div>
+            </section>
+            <section class="glass" id="bottom">
+                <div class="panel" id="answer">
+                    <h1 class="header" id="answerTitle">Before It's Printed</h1>
+                    <h1 class="level" id="answerLevel"></h1>
+                    <p class="message" id="answerMessage"></p>
+                </div>
+            </section>
+        </main>
+        <section class="canvas" id="standard">
             <div class="container" id="tank">
                 <div class="animalContainer">
                     <div class="whalePos size1">
@@ -122,51 +162,6 @@
                 </div>
             </div>
         </section>
-        <main id="main">
-            <section class="glass" id="top">
-                <div class="panel" id="gate">
-                    <h1 id="title">Before It's Printed</h1>
-                    <h1 id="status"></h1>
-                    <p id="desc">The best way of getting a good grade<br>is to already have it</p>
-                    <a href="#bottom" class="glass-button" id="pass">enter</a>
-                    <a class="glass-button" id="activate">activate</a>
-                </div>
-            </section>
-            <section class="glass" id="bottom">
-                <div class="panel" id="client">
-                    <h1 id="clientTitle">Before It's Printed</h1>
-                    <h1 id="clientStatus"></h1>
-                    <div id="container">
-                        <form id="bip-form" enctype="multipart/form-data">
-                            <label for="text">
-                                <textarea class="glass-button" id="text" placeholder="Any details: topics, type, time, tools allowed?"></textarea>
-                            </label>
-                            <label for="type">
-                                <input class="glass-button" id="type" type="text" placeholder="Any kind?">
-                            </label>
-                            <div class="glass-button" id="dragdrop">
-                                <span id="explore">Any presets?</span>
-                                <label for="input">
-                                    <input class="glass-button" type="file" id="input" hidden required/>
-                                </label>
-                            </div>
-                            <label for="time">
-                                <input class="glass-button" id="time" type="text" placeholder="Any time?">
-                            </label>
-                            <label for="traps">
-                                <input class="glass-button" id="traps" type="text" placeholder="Any catch?">
-                            </label>
-                            <label for="submit">
-                                <button type="submit">Submit</button>
-                            </label>
-                        </form>
-                        <pre id="output"></pre>
-                    </div>
-                </div>
-            </section>
-        </main>
     </body>
-		<script src="{% static 'js/panel.js' %}"></script>
-		<script src="{% static 'js/activate.js' %}"></script>
-		<script src="{% static 'js/bip.js' %}"></script>
+    <script src="{% static "js/panel.js" %}"></script>
 </html>

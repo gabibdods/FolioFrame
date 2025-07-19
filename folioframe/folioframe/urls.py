@@ -25,12 +25,8 @@ urlpatterns = [
     path('home/', include("foliohome.urls")),
     re_path(r'^(?P<code>\d{3})/$', folioframe.views.error, name='showErrorTemplate'),
 ]
-if getattr(settings, "USE_DEV_URLS", False):
+if getattr(settings, "DEV_KEY", False):
     urlpatterns += [
         path('foliofin/', include("foliofin.urls")),
         path('bip/', include("bip.urls")),
     ]
-handler400 = 'folioframe.views.custom_400_view'
-handler403 = 'folioframe.views.custom_403_view'
-handler404 = 'folioframe.views.custom_404_view'
-handler500 = 'folioframe.views.custom_500_view'

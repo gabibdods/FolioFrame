@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 # Version
-APP_VERSION = "4.4.7"
+APP_VERSION = "4.5.9"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'folioframe.middleware.Block',
     'folioframe.middleware.Limit',
     'folioframe.middleware.Authenticate',
+    'folioframe.middleware.ErrorRedirect',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -158,3 +159,5 @@ with open(EMAIL_HOST_USER_PATH) as EMAIL_HOST_USER_FILE:
 EMAIL_HOST_PASSWORD_PATH = os.path.join(BASE_DIR, 'envEmailHostPassword.env')
 with open(EMAIL_HOST_PASSWORD_PATH) as EMAIL_HOST_PASSWORD_FILE:
     EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD_FILE.read().strip()
+# Ignore trailing slash in url
+APPEND_SLASH = True
