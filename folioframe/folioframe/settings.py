@@ -161,3 +161,7 @@ with open(EMAIL_HOST_PASSWORD_PATH) as EMAIL_HOST_PASSWORD_FILE:
     EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD_FILE.read().strip()
 # Ignore trailing slash in url
 APPEND_SLASH = True
+# IP Address FastAPI Docker Container Expose
+FASTAPI_HOST_PATH = os.path.join(BASE_DIR, 'envFastAPIHost.env')
+with open(FASTAPI_HOST_PATH) as FASTAPI_HOST_FILE:
+    FASTAPI_HOST = FASTAPI_HOST_FILE.read().strip()

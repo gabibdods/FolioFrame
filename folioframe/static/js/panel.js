@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const fileInput = document.getElementById("input");
         formData.append("file", fileInput.files[0]);
 
-        const response = await fetch("http://127.0.0.1:8081/parse/", {
+        const response = await fetch("http://192.168.2.36:8081/parse/", {
             method: "POST",
             body: formData
         });
