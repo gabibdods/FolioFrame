@@ -95,7 +95,6 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost",
     "http://127.0.0.1",
     "https://gabrieldigitprint.work",
 ]
@@ -165,3 +164,12 @@ APPEND_SLASH = True
 FASTAPI_HOST_PATH = os.path.join(BASE_DIR, 'envFastAPIHost.env')
 with open(FASTAPI_HOST_PATH) as FASTAPI_HOST_FILE:
     FASTAPI_HOST = FASTAPI_HOST_FILE.read().strip()
+FASTAPI_PORT_PATH = os.path.join(BASE_DIR, 'envFastAPIPort.env')
+with open(FASTAPI_PORT_PATH) as FASTAPI_PORT_FILE:
+    FASTAPI_PORT = FASTAPI_PORT_FILE.read().strip()
+# pip packages: (django, asgiref, sqlparse),
+#               (django-extensions, django, asgiref, sqlparse),
+#               (django-ratelimit),
+#               (requests, charset_normalizer, idna, certifi, urllib3),
+#               (gunicorn, packaging)
+#               (psycopg2-binary)
