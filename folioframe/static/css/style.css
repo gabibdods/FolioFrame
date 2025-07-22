@@ -186,11 +186,33 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
 .header-text p {
     font-size: 20px;
     font-weight: 300;
-    text-transform: uppercase;
-    margin: 30px 0 60px;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 30px 0 0;
     transition: color 0.5s ease-in-out;
 }
+.header-text strong {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    color: transparent;
+    left: 0;
+    width: 100%;
+}
+.header-text strong:nth-child(1) { animation: rotateText 48s linear infinite; }
+.header-text strong:nth-child(2) { animation: rotateText 48s linear infinite; animation-delay: 4s; }
+.header-text strong:nth-child(3) { animation: rotateText 48s linear infinite; animation-delay: 8s; }
+.header-text strong:nth-child(4) { animation: rotateText 48s linear infinite; animation-delay: 12s; }
+.header-text strong:nth-child(5) { animation: rotateText 48s linear infinite; animation-delay: 16s; }
+.header-text strong:nth-child(6) { animation: rotateText 48s linear infinite; animation-delay: 20s; }
+.header-text strong:nth-child(7) { animation: rotateText 48s linear infinite; animation-delay: 24s; }
+.header-text strong:nth-child(8) { animation: rotateText 48s linear infinite; animation-delay: 28s; }
+.header-text strong:nth-child(9) { animation: rotateText 48s linear infinite; animation-delay: 32s; }
+.header-text strong:nth-child(10) { animation: rotateText 48s linear infinite; animation-delay: 36s; }
+.header-text strong:nth-child(11) { animation: rotateText 48s linear infinite; animation-delay: 40s; }
+.header-text strong:nth-child(12) { animation: rotateText 48s linear infinite; animation-delay: 44s; }
 #welcome-desc.night-theme { color: #fff; }
 .header-text a {
     width: 200px;
@@ -650,6 +672,10 @@ span.single-timeline-horizontal.spacial-horizontal-line { width: 88px; }
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-duration:1s;
+}
+@keyframes rotateText {
+  0%, 8.3%, 100% { color: transparent; }
+  2%, 6% { color: var(--main-color-highlight); }
 }
 @keyframes bounce {
     0% { bottom:0; }
