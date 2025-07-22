@@ -2,9 +2,6 @@
 /.run
 *.postgresql
 
-folioenv/
-folioenv/**
-
 foliovenv/
 foliovenv/**
 

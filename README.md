@@ -71,17 +71,17 @@ These measures help keep contact forms, newsletter subscriptions, and login rout
                  |
                  v
         +------------------+
-        |     NGINX        |  <- serves static files & acts as reverse proxy
+        |    Gunicorn      |  <- WSGI interface to Django on dedicated port
         +--------+---------+
                  |
                  v
         +------------------+
-        |    Gunicorn      |  <- WSGI interface to Django
+        |     NGINX        |  <- Serves static files from Gunicorn's port & acts as reverse proxy
         +--------+---------+
                  |
                  v
         +------------------+
-        |   Cloudflare     |  <- Safer alternative to port forwarding
+        |   Cloudflare     |  <- Connects the outside to Nginx's port
         +--------+---------+
                  |
                  v
