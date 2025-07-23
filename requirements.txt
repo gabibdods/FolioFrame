@@ -1,35 +1,16 @@
-pdfplumber
-fastapi
-python-docx
-pytesseract
-pillow
-pydantic
-h11
-pip
-cryptography
-cffi
-typing_extensions
-lxml
-sniffio
-Django
-asgiref
-sqlparse
-psycopg2-binary
-colorama
-requests
-certifi
-starlette
-pydantic_core
-anyio
-urllib3
-click
-uvicorn
-charset-normalizer
-annotated-types
-idna
-packaging
-pycparser
-pypdfium2
-django-ratelimit
-python-multipart
-django-extensions
+# FolioFrame
+django                      # (django, asgiref, sqlparse)
+django-extensions           # (django-extensions, django, asgiref, sqlparse)
+django-ratelimit            # (django-ratelimit)
+requests                    # (requests, charset_normalizer, idna, certifi, urllib3)
+gunicorn                    # (gunicorn, packaging)
+psycopg2-binary             # (psycopg2-binary)
+python-dotenv               # (python-dotenv)
+
+# Before Its Printed
+fastapi                     # (fastapi, starlette, pydantic, typing-extensions, annotated-types, pydantic_core, typing-inspection, anyio, idna, sniffio)
+uvicorn                     # (uvicorn, click, h11)
+pdfplumber                  # (pdfplumber, pdfminer.six, pillow, pypdfium, charset-normalizer, cryptography, cffi, pycparser)
+python-docx                 # (python-docx, lxml, typing_extensions)
+pytesseract                 # (pytesseract, packaging, pillow)
+python-multipart            # (python-multipart)

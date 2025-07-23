@@ -6,7 +6,7 @@ foliovenv/
 foliovenv/**
 
 folioframe/*.sqlite3
-folioframe/*.env
+folioframe/-.env
 
 folioframe/.idea/
 folioframe/.idea/**

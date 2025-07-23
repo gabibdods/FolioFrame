@@ -1,5 +1,5 @@
-- name: Deploy Django updates
-  hosts: all
+- name: Deploy
+  hosts: local
   vars:
     known_hosts_path: "{{ lookup('env', 'KNOWN_HOSTS_PATH') }}"
     dest_path: "{{ lookup('env', 'DEST_PATH') }}"
@@ -15,7 +15,7 @@
         key: "{{ lookup('pipe', 'ssh-keyscan gitlab.com') }}"
         path: "{{ known_hosts_path }}"
 
-    - name: Pull latest code
+    - name: Pull latest version
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
         dest: "{{ dest_path }}"

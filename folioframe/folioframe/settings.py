@@ -12,19 +12,22 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Version
 APP_VERSION = "4.5.9"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
+# Load Environment Secrets
+env_path = Path(BASE_DIR) / "-.env"
+load_dotenv(dotenv_path=env_path)
 # Secret key
-SECRET_KEY_PATH = os.path.join(BASE_DIR, 'envSecretKey.env')
-with open(SECRET_KEY_PATH) as SECRET_KEY_FILE:
-    SECRET_KEY = SECRET_KEY_FILE.read().strip()
+SECRET_KEY = os.getenv("SECRET_KEY")
 # Debug
 DEBUG = False
 # Allowed urls
 ALLOWED_HOSTS = [
+    "localhost",
     "127.0.0.1",
     "gabrieldigitprint.work",
 ]
@@ -80,9 +83,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 RECAPTCHA_SITE_KEY = '6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph'
 RECAPTCHA_DEFAULT_ACTION = 'foliogate'
 RECAPTCHA_SCORE_THRESHOLD = 0.8
-RECAPTCHA_SECRET_KEY_PATH = os.path.join(BASE_DIR, 'envReCAPTCHASecretKey.env')
-with open(RECAPTCHA_SECRET_KEY_PATH) as RECAPTCHA_SECRET_KEY_FILE:
-    RECAPTCHA_SECRET_KEY = RECAPTCHA_SECRET_KEY_FILE.read().strip()
+RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
 # WSGI & Gunicorn
 WSGI_APPLICATION = 'folioframe.wsgi.application'
 SECURE_SSL_REDIRECT = False # Reverse Proxy Nginx configured to redirect all traffic to HTTPS
@@ -109,15 +110,9 @@ if USE_SQLITE_FOR_TESTS:
         }
     }
 else:
-    POSTGRESQL_USER_PATH = os.path.join(BASE_DIR, 'envPostgreSQLUser.env')
-    with open(POSTGRESQL_USER_PATH) as POSTGRESQL_USER_FILE:
-        POSTGRESQL_USER = POSTGRESQL_USER_FILE.read().strip()
-    POSTGRESQL_PASSWORD_PATH = os.path.join(BASE_DIR, 'envPostgreSQLPassword.env')
-    with open(POSTGRESQL_PASSWORD_PATH) as POSTGRESQL_PASSWORD_FILE:
-        POSTGRESQL_PASSWORD = POSTGRESQL_PASSWORD_FILE.read().strip()
-    POSTGRESQL_HOST_PATH = os.path.join(BASE_DIR, 'envPostgreSQLHost.env')
-    with open(POSTGRESQL_HOST_PATH) as POSTGRESQL_HOST_FILE:
-        POSTGRESQL_HOST = POSTGRESQL_HOST_FILE.read().strip()
+    POSTGRESQL_USER = os.getenv("POSTGRESQL_USER")
+    POSTGRESQL_PASSWORD = os.getenv("POSTGRESQL_PASSWORD")
+    POSTGRESQL_HOST = os.getenv("POSTGRESQL_HOST")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -152,24 +147,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER_PATH = os.path.join(BASE_DIR, 'envEmailHostUser.env')
-with open(EMAIL_HOST_USER_PATH) as EMAIL_HOST_USER_FILE:
-    EMAIL_HOST_USER = EMAIL_HOST_USER_FILE.read().strip()
-EMAIL_HOST_PASSWORD_PATH = os.path.join(BASE_DIR, 'envEmailHostPassword.env')
-with open(EMAIL_HOST_PASSWORD_PATH) as EMAIL_HOST_PASSWORD_FILE:
-    EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD_FILE.read().strip()
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 # Ignore trailing slash in url
 APPEND_SLASH = True
 # IP Address FastAPI Docker Container Expose
-FASTAPI_HOST_PATH = os.path.join(BASE_DIR, 'envFastAPIHost.env')
-with open(FASTAPI_HOST_PATH) as FASTAPI_HOST_FILE:
-    FASTAPI_HOST = FASTAPI_HOST_FILE.read().strip()
-FASTAPI_PORT_PATH = os.path.join(BASE_DIR, 'envFastAPIPort.env')
-with open(FASTAPI_PORT_PATH) as FASTAPI_PORT_FILE:
-    FASTAPI_PORT = FASTAPI_PORT_FILE.read().strip()
-# pip packages: (django, asgiref, sqlparse),
-#               (django-extensions, django, asgiref, sqlparse),
-#               (django-ratelimit),
-#               (requests, charset_normalizer, idna, certifi, urllib3),
-#               (gunicorn, packaging)
-#               (psycopg2-binary)
+FASTAPI_HOST = os.getenv("FASTAPI_HOST")
+FASTAPI_PORT = os.getenv("FASTAPI_PORT")
