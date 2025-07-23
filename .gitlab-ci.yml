@@ -8,6 +8,7 @@ deploy:
   tags:
     - FolioFrame
   stage: deploy
+  image: python:3.9
   before_script:
     - python3 -m venv venv
     - source venv/bin/activate
