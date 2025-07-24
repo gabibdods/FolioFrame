@@ -1,43 +1,92 @@
-.idea/
-/.run
-*.postgresql
+# https://github.com/gabibdods/NewRepositoryTemplate:
+*
 
-foliovenv/
-foliovenv/**
+!.gitattributes
+!.gitignore
+!README.md
+!License/
+!License/LICENSE.md
+!License/NOTICE.md
 
-folioframe/*.sqlite3
-folioframe/-.env
 
-folioframe/.idea/
-folioframe/.idea/**
-folioframe/__pycache__/
-folioframe/__pycache__/**
+# particular repository ignores:
 
-folioframe/bip/__pycache__/
-folioframe/bip/__pycache__/**
-folioframe/bip/migrations/
-folioframe/bip/migrations/**
+!.gitlab-ci.yml
+!.gitmodules
+!ansible.cfg
+!deploy.yml
+!folioframe.gunicorn
+!folioframe.nginx
+!register.sh
+!requirements.txt
 
-folioframe/foliofin/__pycache__/
-folioframe/foliofin/__pycache__/**
-folioframe/foliofin/migrations/
-folioframe/foliofin/migrations/**
+!BeforeItsPrinted/
 
-folioframe/folioframe/settings_dev.py
-folioframe/.run/
-folioframe/.run/FolioFrame.run.xml
-folioframe/folioframe/__pycache__/
-folioframe/folioframe/__pycache__/**
+!folioframe/
+!folioframe/manage.py
 
-folioframe/foliogate/__pycache__/
-folioframe/foliogate/__pycache__/**
-folioframe/foliogate/migrations/
-folioframe/foliogate/migrations/**
+!folioframe/bip/
+!folioframe/bip/*.py
 
-folioframe/foliohome/__pycache__/
-folioframe/foliohome/__pycache__/**
-folioframe/foliohome/migrations/
-folioframe/foliohome/migrations/**
+!folioframe/foliofin/
+!folioframe/foliofin/*.py
 
-folioframe/staticfiles/
-folioframe/staticfiles/**
+!folioframe/folioframe/
+!folioframe/folioframe/__init__.py
+!folioframe/folioframe/asgi.py
+!folioframe/folioframe/context_processors.py
+!folioframe/folioframe/middleware.py
+!folioframe/folioframe/settings.py
+!folioframe/folioframe/urls.py
+!folioframe/folioframe/views.py
+!folioframe/folioframe/wsgi.py
+
+!folioframe/foliogate/
+!folioframe/foliogate/*.py
+
+!folioframe/foliohome/
+!folioframe/foliohome/*.py
+
+!folioframe/static/
+
+!folioframe/static/css/
+!folioframe/static/css/*.css
+
+!folioframe/static/fonts/
+!folioframe/static/fonts/*
+
+!folioframe/static/images/
+!folioframe/static/images/favicon.png
+
+!folioframe/static/images/backgrounds/
+!folioframe/static/images/backgrounds/*.svg
+
+!folioframe/static/images/languages/
+!folioframe/static/images/languages/*.svg
+!folioframe/static/images/languages/clef_de_sol.png
+
+!folioframe/static/images/portfolio/
+!folioframe/static/images/portfolio/*.png
+
+!folioframe/static/js/
+!folioframe/static/js/*.js
+
+!folioframe/templates/
+
+!folioframe/templates/bip/
+!folioframe/templates/bip/panel.html
+
+!folioframe/templates/error/
+!folioframe/templates/error/*.html
+
+!folioframe/templates/foliofin/
+!folioframe/templates/foliofin/*.html
+
+!folioframe/templates/foliogate/
+!folioframe/templates/foliogate/*.html
+
+!folioframe/templates/foliohome/
+!folioframe/templates/foliohome/*.html
+
+!inventory/
+!inventory/hosts.ini
