@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{% static "css/fonts.css" %}">
         <link rel="stylesheet" href="{% static "css/standard.css" %}">
         <link rel="stylesheet" href="{% static "css/premium.css" %}">
-        <script>window.appConfig = { fastapi: "{{ fastapi|escapejs }}" };</script>
+        <script>window.appConfig = { hostFastAPI: "{{ fastAPIHost|escapejs }}", portFastAPI: "{{ fastAPIPort|escapejs }}" };</script>
     </head>
     <body>
         <main id="main">

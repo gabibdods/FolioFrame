@@ -5,4 +5,4 @@ from django.http import HttpResponse
 def panel(request):
     if not getattr(settings, 'DEV_KEY', False):
         return HttpResponse(status=305)
-    return render(request, 'bip/panel.html', { "fastapi": settings.FASTAPI_HOST }, status=201)
+    return render(request, 'bip/panel.html', { "fastAPIHost": settings.FASTAPI_HOST, "fastAPIPort": settings.FASTAPI_PORT }, status=201)
