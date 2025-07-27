@@ -3,6 +3,7 @@ stages:
 
 variables:
   ANSIBLE_HOST_KEY_CHECKING: "False"
+  ANSIBLE_CONFIG: "./ansible.cfg"
 
 deploy:
   tags:
@@ -15,9 +16,8 @@ deploy:
     - pip install --upgrade pip
     - pip install ansible
   script:
-    - source venv/bin/activate
     - ansible-playbook deploy.yml -vvv
   only:
     - main
   artifacts:
-    expire_in: 1 minute
+    expire_in: 1 second

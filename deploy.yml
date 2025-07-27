@@ -1,20 +1,11 @@
 - name: Deploy
   hosts: local
   vars:
-    known_hosts_path: "{{ lookup('env', 'KNOWN_HOSTS_PATH') }}"
     dest_path: "{{ lookup('env', 'DEST_PATH') }}"
-    collectstatic_python: "{{ lookup('env', 'COLLECTSTATIC_PYTHON') }}"
-    collectstatic_command: "{{ lookup('env', 'COLLECTSTATIC_COMMAND') }}"
     remote_deploy_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   become: true
   become_user: "{{ remote_deploy_user }}"
   tasks:
-    - name: Ensure gitlab.com is in known_hosts
-      ansible.builtin.known_hosts:
-        name: gitlab.com
-        key: "{{ lookup('pipe', 'ssh-keyscan gitlab.com') }}"
-        path: "{{ known_hosts_path }}"
-
     - name: Pull latest version
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
@@ -28,7 +19,7 @@
       become_user: www-data
       args:
         chdir: "{{ dest_path }}"
-      command: "{{ collectstatic_python }} {{ collectstatic_command }}"
+      command: "./foliovenv/bin/python folioframe/manage.py collectstatic --noinput --clear"
 
     - name: Reload systemd
       become: true
