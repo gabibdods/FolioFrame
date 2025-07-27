@@ -3,7 +3,6 @@ stages:
 
 variables:
   ANSIBLE_HOST_KEY_CHECKING: "False"
-  ANSIBLE_CONFIG: "./ansible.cfg"
 
 deploy:
   tags:

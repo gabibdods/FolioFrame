@@ -1,5 +1,7 @@
 - name: Deploy
-  hosts: local
+  hosts: localhost
+  connection: local
+  gather_facts: false
   vars:
     dest_path: "{{ lookup('env', 'DEST_PATH') }}"
     remote_deploy_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
