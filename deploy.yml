@@ -3,25 +3,39 @@
   connection: local
   gather_facts: false
   vars:
-    dest_path: "{{ lookup('env', 'DEST_PATH') }}"
-    remote_deploy_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
+    dest: "{{ lookup('env', 'DEST_PATH') }}"
+    user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   tasks:
     - name: Pull latest version
       become: true
-      become_user: "{{ remote_deploy_user }}"
+      become_user: "{{ user }}"
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
-        dest: "{{ dest_path }}"
+        dest: "{{ dest }}"
         version: main
         force: yes
         update: yes
 
-    - name: Collect static files as www-data
+    - name: Collect static files
       become: true
-      become_user: "{{ remote_deploy_user }}"
+      become_user: "{{ user }}"
       args:
-        chdir: "{{ dest_path }}"
+        chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py collectstatic --noinput --clear"
+
+    - name: Make migrations
+      become: true
+      become_user: "{{ user }}"
+      args:
+        chdir: "{{ dest }}"
+      command: "./foliovenv/bin/python folioframe/manage.py makemigrations --noinput"
+
+    - name: Migrate databases
+      become: true
+      become_user: "{{ user }}"
+      args:
+        chdir: "{{ dest }}"
+      command: "./foliovenv/bin/python folioframe/manage.py migrate --noinput"
 
     - name: Reload systemd
       become: true
