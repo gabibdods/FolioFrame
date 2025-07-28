@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.utils.deprecation import MiddlewareMixin
 from django.urls import reverse
 import foliogate.views
+from django.conf import settings
 
 class Block:
     def __init__(self, get_response):
@@ -21,7 +22,7 @@ class Authenticate:
     def __call__(self, request):
         if request.method != 'GET':
             return self.get_response(request)
-        elif request.headers.get('ELECTRON') == 'electronconfirmed':
+        elif request.headers.get('ElectronBypass') == settings.ELECTRON_BYPASS:
             return self.get_response(request)
         else:
             if request.path.startswith('/428'):

@@ -19,7 +19,7 @@ APP_VERSION = "4.5.9"
 # Build absolute paths inside project
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Load Environment Secrets
-env_path = Path(BASE_DIR) / "-.env"
+env_path = Path(BASE_DIR) / ".env"
 load_dotenv(dotenv_path=env_path)
 # Secret key
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -155,3 +155,5 @@ APPEND_SLASH = True
 # IP Address FastAPI Docker Container Expose
 FASTAPI_HOST = os.getenv("FASTAPI_HOST")
 FASTAPI_PORT = os.getenv("FASTAPI_PORT")
+# Electron Bypass
+ELECTRON_BYPASS = os.getenv("ELECTRON_BYPASS")
