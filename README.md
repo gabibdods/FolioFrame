@@ -1,68 +1,88 @@
-# 🌍 FolioFrame — Personal Portfolio Website on a Live Production Django Server
+# FolioFrame
 
-A full-featured personal website for recruiters, collaborators, and visitors to view my portfolio, explore my experience and send me messages. Built using Django in **production mode**, integrated with **Gunicorn** and **NGINX** for performance, and enriched with **HTML**, **CSS**, and **JavaScript** for interactive frontend and dynamic backend behavior. A CI/CD pipeline connects my work environment to the web server using **GitLab Runner** and SSH, leveraging **Ansible** for tasks like database migration, static/media file collection, and package updates. Updates appear in minutes on the live public URL via **Cloudflare Tunnels**, a safer alternative to traditional port forwarding.
+# Personal Portfolio Website on a Live Production Django Server
 
----
+### Description
 
-## 🔍 Problem Statement
-
-I needed a professional, accessible, and public-facing website to showcase my work to recruiters and potential collaborators. The site needed to be secure, reliable, and production-ready — with a message-sending form — and accessible via a real public domain URL.
-
----
-
-## 🎯 Project Goals
-
-- Host a **portfolio website** accessible from anywhere online
-- Enable visitors to:
-  - View project showcases
-  - Learn about my professional background
-  - Send direct messages to my email
-  - Subscribe to my game's newsletter
-- Practice deploying Django in **production mode**
-- Implement strong **anti-bot and anti-spam** protection for all public forms
+- A full-stack portfolio website designed to present professional projects, accept contact messages, and promote ongoing work.
+- Built with Django in production mode, deployed via Gunicorn and NGINX, and supported by CI/CD automation using GitLab Runner and Ansible.
+- Cloudflare Tunnel enables secure, global access via public domain without traditional port forwarding.
 
 ---
 
-## 🛡️ Anti-Bot & Security Measures
+## NOTICE
 
-To protect the site from automated attacks, spam, and abuse, I implemented multiple layers of bot protection:
+- Please read through this `README.md` to better understand the project's source code and setup instructions.
+- Also, make sure to review the contents of the `License/` directory.
+- Your attention to these details is appreciated — enjoy exploring the project!
 
-- ✅ **Google reCAPTCHA v3** — integrated into contact and newsletter forms to block automated submissions
-- ✅ **Django Ratelimit** — throttles repeated form requests to prevent brute-force abuse
-- ✅ **Custom Django Middleware** — user-agent filtering, and suspicious pattern detection
-- ✅ **Honeypot Traps** — invisible form fields to trap bots that fill all inputs blindly
-- 🧪 **More security features to come**, including IP-based lockouts, behavioral analysis, and spam signature detection
+## Problem Statement
 
-These measures help keep contact forms, newsletter subscriptions, and login routes clean, responsive, and resilient under traffic.
+- I needed a public-facing website to present my portfolio, receive contact messages, and support newsletter subscriptions. The solution had to be stable, secure, production-ready, and accessible via a real domain.
 
 ---
 
-## 🛠️ Technologies Used
+## Project Goals
 
-### 🔧 Backend & Server
-- **Django** — Python web framework used for routing and site structure
-- **Python** — Used to configure Django settings, routes, views, and logic
-- **Gunicorn** — WSGI-compliant HTTP server for production use
-- **NGINX** — Reverse proxy and static file server with high efficiency
+### Deploy a Django-powered personal portfolio
 
-### 💻 Frontend & Interactivity
-- **HTML** — Core structure of the website
-- **CSS** — Visual design and responsiveness
-- **JavaScript** — Interactive frontend behavior
-- **Google reCAPTCHA** — Integrated in key input forms
+- Build and launch a Django website accessible from anywhere using a secure tunnel to a real domain.
+
+### Enable messaging, subscriptions, and project showcasing
+
+- Provide an interactive UI for users to send messages, learn about my work, and subscribe to updates.
 
 ---
 
-## 🧩 Design Decisions
+## Tools, Materials & Resources
 
-- Used **Django + Python** to leverage previous experience and take advantage of Django’s form system and security features
-- Chose **Gunicorn + NGINX** for production deployment due to their proven performance and reliability
-- Emphasized security, with **Cloudflare ZeroTrust** and strong form validation
-- Prioritized **user input safety**, **anti-bot protection**, and **web hardening** through middleware and IP control
+### Django + Python Backend
+
+- Django framework used for routing, form handling, and backend logic, written in Python.
+
+### Gunicorn + NGINX + Cloudflare Tunnel
+
+- Gunicorn serves the Django app as WSGI, reverse-proxied by NGINX, with secure tunneling via Cloudflare.
+
+### GitLab CI/CD + Ansible
+
+- GitLab Runner triggers deployments, executes Ansible tasks for DB migrations, media collection, and system updates.
 
 ---
 
-## 🖥️ Architecture Overview
+## Design Decision
+
+### Gunicorn and NGINX production stack
+
+- Selected for stability, reverse proxy performance, and production-grade deployment compatibility.
+
+### Ansible-powered deployment pipeline
+
+- Ensures repeatable, automated deployment steps for updates and configuration changes.
+
+### Security-first development
+
+- Employed Cloudflare Zero Trust, Django middleware, and multi-layer bot prevention for form endpoints.
+
+---
+
+## Features
+
+### Project Portfolio Showcases
+
+- Visitors can view categorized, documented projects with descriptions, links, and visuals.
+
+### Contact Form and Newsletter
+
+- reCAPTCHA-secured contact form allows direct messaging; optional subscription to future project newsletters.
+
+### Full CI/CD Deployment Pipeline
+
+- GitLab Runner + Ansible script push the latest project version with media sync and database migrations to production.
+
+---
+
+## Block Diagram
 
 ```plaintext
         +------------------+
@@ -93,3 +113,107 @@ These measures help keep contact forms, newsletter subscriptions, and login rout
         | - Honeypot & Middleware    |
         | - Rate Limiting Logic      |
         +----------------------------+
+```
+
+---
+
+## Functional Overview
+
+- Gunicorn serves the Django app as a WSGI service.
+- NGINX proxies requests to Gunicorn and handles static file delivery.
+- Cloudflare Tunnel connects external users securely to the private server.
+- Django provides page routing, project display, reCAPTCHA validation, and secure form handling.
+
+---
+
+## Challenges & Solutions
+
+### Deploying Django in a true production environment
+
+- Solved via Gunicorn + NGINX reverse proxy and managed process hosting.
+
+### Preventing spam and bots on contact forms
+
+- Integrated Google reCAPTCHA v3, honeypot fields, rate limiting, and user-agent detection via middleware.
+
+---
+
+## Lessons Learned
+
+### Technical Field
+
+- CI/CD workflows with GitLab Runner and Ansible.
+- Secure production deployment using Cloudflare Tunnels, Gunicorn, and NGINX.
+
+### Web Security Practices
+
+- Built layered defenses against bots and spam, combining rate limiting, CAPTCHA, honeypots, and custom middleware.
+
+---
+
+## Project Structure
+
+```plaintext
+root/
+├── License/
+│   ├── LICENSE.md
+│   └── NOTICE.md
+│
+├── .gitattributes
+│
+├── .gitignore
+│
+├── README.md
+│
+├── folioframe/
+│   ├── bip/
+│   │   └── BeforeItsPrinted app
+│   │
+│   ├── foliofin/
+│   │   └── FolioFin app
+│   │
+│   ├── folioframe/
+│   │   └── FolioFrame project
+│   │
+│   ├── foliogate/
+│   │   └── FolioGate app
+│   │
+│   ├── foliohome/
+│   │   └── FolioHome app
+│   │
+│   ├── static/
+│   │   └── static files
+│   │
+│   ├── templates
+│   │   └── page templates
+│   │
+│   └── manage.py
+│
+├── inventory/
+│   └── hosts.ini
+│
+├── .gitlab-ci.yml
+│
+├── .gitmodules
+│
+├── ansible.cfg
+│
+├── deploy.yml
+│
+├── folioframe.gunicorn
+│
+├── folioframe.nginx
+│
+├── register.sh
+│
+└── requirements.txt
+```
+
+---
+
+## Future Enhancements
+
+- Add project search and filtering system.
+- Build an analytics dashboard for traffic and form submission insights.
+- Integrate comment/discussion widgets on showcased projects.
+- Expand newsletter into a subscriber-focused content feed.
