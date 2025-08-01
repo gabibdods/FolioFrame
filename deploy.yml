@@ -1,5 +1,6 @@
 - name: Deploy
   hosts: localhost
+  become_method: sudo
   connection: local
   gather_facts: false
   vars:
