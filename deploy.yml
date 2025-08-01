@@ -1,6 +1,5 @@
 - name: Deploy
   hosts: localhost
-  become_method: sudo
   connection: local
   gather_facts: false
   vars:
@@ -8,8 +7,6 @@
     user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   tasks:
     - name: Pull latest version
-      become: true
-      become_user: "{{ user }}"
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
         dest: "{{ dest }}"
@@ -18,56 +15,38 @@
         update: yes
 
     - name: Collect static files
-      become: true
-      become_user: "{{ user }}"
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py collectstatic --noinput --clear"
 
     - name: Make migrations
-      become: true
-      become_user: "{{ user }}"
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py makemigrations --noinput"
 
     - name: Migrate databases
-      become: true
-      become_user: "{{ user }}"
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py migrate --noinput"
 
     - name: Reload systemd
-      become: true
-      become_user: root
       command: systemctl daemon-reload
 
     - name: Restart Gunicorn
-      become: true
-      become_user: root
       systemd:
         name: gunicorn
         state: restarted
 
     - name: Test Nginx config
-      become: true
-      become_user: root
       command: nginx -t
 
     - name: Restart Nginx
-      become: true
-      become_user: root
       systemd:
         name: nginx
         state: restarted
         
     - name: sudo update
-      become: true
-      become_user: root
       command: apt update
         
     - name: sudo upgraded
-      become: true
-      become_user: root
       command: apt upgrade -y
