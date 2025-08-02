@@ -7,8 +7,9 @@
     user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   tasks:
     - name: Pull latest version
-      become: true
       become_user: root
+      become: yes
+      become_method: sudo
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
         dest: "{{ dest }}"
