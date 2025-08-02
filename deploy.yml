@@ -7,7 +7,6 @@
   become_method: sudo
   vars:
     dest: "{{ lookup('env', 'DEST_PATH') }}"
-    user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   tasks:
     - name: Pull latest version
       ansible.builtin.git:
