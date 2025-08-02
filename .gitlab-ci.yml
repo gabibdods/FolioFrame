@@ -15,7 +15,7 @@ deploy:
     - pip install --upgrade pip
     - pip install ansible
   script:
-    - ansible-playbook deploy.yml -vvv
+    - ansible-playbook deploy.yml
   only:
     - main
   artifacts:
