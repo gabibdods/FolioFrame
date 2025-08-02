@@ -18,16 +18,25 @@
         update: yes
 
     - name: Collect static files
+      become_user: root
+      become: yes
+      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py collectstatic --noinput --clear"
 
     - name: Make migrations
+      become_user: root
+      become: yes
+      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py makemigrations --noinput"
 
     - name: Migrate databases
+      become_user: root
+      become: yes
+      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py migrate --noinput"
