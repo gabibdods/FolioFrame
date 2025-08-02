@@ -20,8 +20,6 @@
 !register.sh
 !requirements.txt
 
-!BeforeItsPrinted/
-
 !folioframe/
 !folioframe/manage.py
 
