@@ -281,7 +281,7 @@ nav.navbar.bootsnav .navbar-toggle i { color: var(--main-color-highlight); }
     display: inline-block;
     color: var(--main-color-highlight);
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
 }
 .isotope .item:hover .isotope-overlay {
