@@ -2,14 +2,14 @@
   hosts: localhost
   connection: local
   gather_facts: false
+  become_user: root
+  become: yes
+  become_method: sudo
   vars:
     dest: "{{ lookup('env', 'DEST_PATH') }}"
     user: "{{ lookup('env', 'ANSIBLE_USER') }}"
   tasks:
     - name: Pull latest version
-      become_user: root
-      become: yes
-      become_method: sudo
       ansible.builtin.git:
         repo: 'git@gitlab.com:gabibdods/folioframe.git'
         dest: "{{ dest }}"
@@ -18,25 +18,16 @@
         update: yes
 
     - name: Collect static files
-      become_user: root
-      become: yes
-      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py collectstatic --noinput --clear"
 
     - name: Make migrations
-      become_user: root
-      become: yes
-      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py makemigrations --noinput"
 
     - name: Migrate databases
-      become_user: root
-      become: yes
-      become_method: sudo
       args:
         chdir: "{{ dest }}"
       command: "./foliovenv/bin/python folioframe/manage.py migrate --noinput"
