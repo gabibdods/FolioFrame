@@ -1,22 +1,35 @@
 stages:
-  - deploy
+    - deploy
+    - test
+    - secret-detection
+
+sast:
+    stage: test
+    
+include:
+    - template: Security/SAST.gitlab-ci.yml
+    - template: Security/Secret-Detection.gitlab-ci.yml
 
 variables:
-  ANSIBLE_HOST_KEY_CHECKING: "False"
+    ANSIBLE_HOST_KEY_CHECKING: "false"
+    SECRET_DETECTION_ENABLED: "true"
+    
+secret_detection:
+    stage: secret-detection
 
 deploy:
-  tags:
-    - FolioFrame
-  stage: deploy
-  image: python:3.9
-  before_script:
-    - python3 -m venv venv
-    - source venv/bin/activate
-    - pip install --upgrade pip
-    - pip install ansible
-  script:
-    - ansible-playbook deploy.yml
-  only:
-    - main
-  artifacts:
-    expire_in: 1 second
+    tags:
+        - FolioFrame
+    stage: deploy
+    image: python:3.9
+    before_script:
+        - python3 -m venv venv
+        - source venv/bin/activate
+        - pip install --upgrade pip
+        - pip install ansible
+    script:
+        - ansible-playbook deploy.yml
+    only:
+        - main
+    artifacts:
+        expire_in: 1 second
