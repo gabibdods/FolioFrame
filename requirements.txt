@@ -6,11 +6,4 @@ requests                    # (requests, charset_normalizer, idna, certifi, urll
 gunicorn                    # (gunicorn, packaging)
 psycopg2-binary             # (psycopg2-binary)
 python-dotenv               # (python-dotenv)
-
-# Before Its Printed
-fastapi                     # (fastapi, starlette, pydantic, typing-extensions, annotated-types, pydantic_core, typing-inspection, anyio, idna, sniffio)
-uvicorn                     # (uvicorn, click, h11)
-pdfplumber                  # (pdfplumber, pdfminer.six, pillow, pypdfium, charset-normalizer, cryptography, cffi, pycparser)
-python-docx                 # (python-docx, lxml, typing_extensions)
-pytesseract                 # (pytesseract, packaging, pillow)
-python-multipart            # (python-multipart)
+djangorestframework         # (djangorestframework, tzdata)

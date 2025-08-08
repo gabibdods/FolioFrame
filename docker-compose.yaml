@@ -1,0 +1,53 @@
+services:
+    db:
+        image: postgres:16
+        container_name: ffDB
+        env_file:
+          - .env
+        expose:
+          - "5432"
+        restart: unless-stopped
+
+    folioframe:
+        build: .
+        container_name: ffDJ
+        env_file:
+          - .env
+        expose:
+          - "8000"
+        volumes:
+          - static_volume:/app/staticfiles
+          - media_volume:/app/media
+        depends_on:
+          - db
+        restart: unless-stopped
+
+    nginx:
+        image: nginx:1.27-alpine
+        container_name: ffNX
+        expose:
+          - "80"
+        volumes:
+          - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+          - ./docker/nginx/update_cloudflare_ips.sh:/app/update_cloudflare_ips.sh:ro
+          - ./docker/nginx/40-update-cloudflare-ips.sh:/docker-entrypoint.d/40-update-cloudflare-ips.sh:ro
+          - ./docker/nginx/conf.d/:/etc/nginx/conf.d:rw
+          - static_volume:/var/www/static
+          - media_volume:/var/www/media
+        depends_on:
+          - folioframe
+        restart: unless-stopped
+
+    cloudflare:
+        image: cloudflare/cloudflared:latest
+        container_name: ffCF
+        env_file:
+          - .env
+        command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
+        depends_on:
+          - nginx
+        restart: unless-stopped
+
+volumes:
+    static_volume:
+    media_volume:

@@ -1,0 +1,22 @@
+{% extends "foliohome/base.html" %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/response.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section id="welcome-hero" class="welcome-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2 id="welcome-header">disappointed but not surprised <span>!</span></h2>
+                        <p id="welcome-desc">at least you tried :(</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
