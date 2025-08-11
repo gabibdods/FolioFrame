@@ -5,7 +5,7 @@ if ! command -v curl >/dev/null 2>&1; then
     apk add --no-cache curl >/dev/null
 fi
 
-/app/update_cloudflare_ips.sh
+/app/update_cloudflare_ips.sh || true
 
 (
     while true; do

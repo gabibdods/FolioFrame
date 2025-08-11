@@ -1,16 +1,20 @@
 services:
-    db:
+    ffdb:
         image: postgres:16
-        container_name: ffDB
+        container_name: ffdb
         env_file:
           - .env
         expose:
           - "5432"
         restart: unless-stopped
+        networks:
+            gabibdods:
+                aliases:
+                  - ffdb
 
-    folioframe:
+    ffdj:
         build: .
-        container_name: ffDJ
+        container_name: ffdj
         env_file:
           - .env
         expose:
@@ -18,36 +22,49 @@ services:
         volumes:
           - static_volume:/app/staticfiles
           - media_volume:/app/media
-        depends_on:
-          - db
+        depends_on: [ffdb]
         restart: unless-stopped
+        networks:
+            gabibdods:
+                aliases:
+                  - ffdj
 
-    nginx:
+    ffnx:
         image: nginx:1.27-alpine
-        container_name: ffNX
-        expose:
-          - "80"
+        container_name: ffnx
+        ports:
+          - "0.0.0.0:80:80/tcp"
         volumes:
-          - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+          - ./docker/nginx/nginx.d:/etc/nginx/nginx.d
+          - ./docker/nginx/conf.d:/etc/nginx/conf.d
           - ./docker/nginx/update_cloudflare_ips.sh:/app/update_cloudflare_ips.sh:ro
           - ./docker/nginx/40-update-cloudflare-ips.sh:/docker-entrypoint.d/40-update-cloudflare-ips.sh:ro
-          - ./docker/nginx/conf.d/:/etc/nginx/conf.d:rw
           - static_volume:/var/www/static
           - media_volume:/var/www/media
-        depends_on:
-          - folioframe
+        depends_on: [ffdj]
         restart: unless-stopped
+        networks:
+            gabibdods:
+                aliases:
+                  - ffnx
 
-    cloudflare:
-        image: cloudflare/cloudflared:latest
-        container_name: ffCF
-        env_file:
-          - .env
-        command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
-        depends_on:
-          - nginx
-        restart: unless-stopped
+#    ffcf:
+#        image: cloudflare/cloudflared:latest
+#        container_name: ffcf
+#        env_file:
+#          - .env
+#        command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
+#        depends_on: [ffnx]
+#        restart: unless-stopped
+#        networks:
+#            gabibdods:
+#                aliases:
+#                  - ffcf
 
 volumes:
     static_volume:
     media_volume:
+
+networks:
+    gabibdods:
+        external: true

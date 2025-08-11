@@ -20,6 +20,7 @@
 !deploy.yml
 !Dockerfile
 !docker-compose.yaml
+!gunicorn.conf.py
 !manage.py
 !register.sh
 !requirements.txt
@@ -31,12 +32,15 @@
 !docker/entrypoint.sh
 
 !docker/nginx/
-!docker/nginx/nginx.conf
-!docker/nginx/cloudflare_ips.conf
-!docker/nginx/update_cloudflare_ips.sh
 !docker/nginx/40-update-cloudflare-ips.sh
+!docker/nginx/cloudflare_ips.conf
+!docker/nginx/nginx.conf
+!docker/nginx/update_cloudflare_ips.sh
 
 !docker/nginx/conf.d/
+!docker/nginx/conf.d/cloudflare_ips.conf
+!docker/nginx/conf.d/cloudflare_ips.conf.bkp
+!docker/nginx/conf.d/default.conf
 
 !foliofin/
 !foliofin/*.py
