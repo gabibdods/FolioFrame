@@ -6,4 +6,4 @@ requests                    # (requests, charset_normalizer, idna, certifi, urll
 gunicorn                    # (gunicorn, packaging)
 psycopg2-binary             # (psycopg2-binary)
 python-dotenv               # (python-dotenv)
-djangorestframework         # (djangorestframework, tzdata)
+djangorestframework         # (djangorestframework)
