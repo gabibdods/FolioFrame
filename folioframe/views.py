@@ -8,4 +8,4 @@ def error(request, code):
     try:
         return render(request, template, status=int(code))
     except TemplateDoesNotExist:
-        return redirect("/416/")
+        return redirect("/ff/416/")

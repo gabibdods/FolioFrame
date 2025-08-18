@@ -1,21 +1,12 @@
 {% extends "foliogate/basis.html" %}
 {% load static %}
 
-{% block head %}
-    {{ block.super }}
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph"></script>
-{% endblock %}
-
 {% block main %}
     <div class="scaler">
         <div id="container">
             <h1>Verify You're Human</h1>
-            <p>Click the button below to continue.</p>
-            <form method="post" action="{% url 'gate' %}">
-                {% csrf_token %}
-                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-                <button type="submit">Verify & Continue</button>
-            </form>
+            <p>Click the button below twice to continue.</p>
+            <button id="enable-js-btn" type="button">Verify & Continue</button>
         </div>
     </div>
 {% endblock %}

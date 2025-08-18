@@ -2,7 +2,6 @@
 django                      # (django, asgiref, sqlparse)
 django-extensions           # (django-extensions, django, asgiref, sqlparse)
 django-ratelimit            # (django-ratelimit)
-requests                    # (requests, charset_normalizer, idna, certifi, urllib3)
 gunicorn                    # (gunicorn, packaging)
 psycopg2-binary             # (psycopg2-binary)
 python-dotenv               # (python-dotenv)

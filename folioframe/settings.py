@@ -91,19 +91,15 @@ TEMPLATES = [
 
 TEMPLATES[0]['OPTIONS']['context_processors'].append('folioframe.context_processors.version')
 
-# Media
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 #reCAPTCHA
 RECAPTCHA_SITE_KEY = '6LeaZHQrAAAAANvtkYEp4PmM8Snsc2kJimiisXph'
 RECAPTCHA_DEFAULT_ACTION = 'foliogate'
-RECAPTCHA_SCORE_THRESHOLD = 0.8
+RECAPTCHA_SCORE_THRESHOLD = 0.9
 RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
 
 # WSGI & Gunicorn
 WSGI_APPLICATION = 'folioframe.wsgi.application'
-SECURE_SSL_REDIRECT = False # Reverse Proxy Nginx configured to redirect all traffic to HTTPS
+SECURE_SSL_REDIRECT = False
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
@@ -146,11 +142,20 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# HazeGate compatibility configurations
+FORCE_SCRIPT_NAME = '/ff'
+USE_X_FORWARDED_PORT = True
+USE_X_FORWARDED_PREFIX = True
+
 # Static files & Nginx
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/ff/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 USE_X_FORWARDED_HOST = True
+
+# Media
+MEDIA_URL = '/ff/media/'
+MEDIA_ROOT  = BASE_DIR / 'media'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
