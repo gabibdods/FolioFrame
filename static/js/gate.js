@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         if (cookieExists) {
-            const val = document.cookie.match(new RegExp('(?:^|; )' + cookieName.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)')) ? decodeURIComponent(document.cookie.match(new RegExp('(?:^|; )' + cookieName.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)'))[1]) : null;
+	    cookieValue = document.cookie.match(new RegExp('(?:^|; )' + cookieName.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)'))
+            const val = cookieValue ? decodeURIComponent(cookieValue[1]) : null;
             if (val === "1") {
                 window.location.assign("/ff/home/");
             } else {

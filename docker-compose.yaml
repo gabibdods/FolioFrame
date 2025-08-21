@@ -26,10 +26,10 @@ services:
     container_name: ffnx
     expose: ["80"]
     volumes:
-      - ./docker/nginx/nginx.d:/etc/nginx/nginx.d
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
-      - ./docker/nginx/update_cloudflare_ips.sh:/app/update_cloudflare_ips.sh:ro
-      - ./docker/nginx/40-update-cloudflare-ips.sh:/docker-entrypoint.d/40-update-cloudflare-ips.sh:ro
+      - ./nginx/nginx.d:/etc/nginx/nginx.d
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/update_cloudflare_ips.sh:/app/update_cloudflare_ips.sh:ro
+      - ./nginx/40-update-cloudflare-ips.sh:/docker-entrypoint.d/40-update-cloudflare-ips.sh:ro
       - static_volume:/var/www/static
       - media_volume:/var/www/media
     depends_on: [ffdj]

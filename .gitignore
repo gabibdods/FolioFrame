@@ -31,29 +31,11 @@
 !docker/
 !docker/entrypoint.sh
 
-!docker/nginx/
-!docker/nginx/40-update-cloudflare-ips.sh
-!docker/nginx/cloudflare_ips.conf
-!docker/nginx/nginx.conf
-!docker/nginx/update_cloudflare_ips.sh
-
-!docker/nginx/conf.d/
-!docker/nginx/conf.d/cloudflare_ips.conf
-!docker/nginx/conf.d/cloudflare_ips.conf.bkp
-!docker/nginx/conf.d/default.conf
-
 !foliofin/
 !foliofin/*.py
 
 !folioframe/
-!folioframe/__init__.py
-!folioframe/asgi.py
-!folioframe/context_processors.py
-!folioframe/middleware.py
-!folioframe/settings.py
-!folioframe/urls.py
-!folioframe/views.py
-!folioframe/wsgi.py
+!folioframe/*.py
 
 !foliogate/
 !foliogate/*.py
@@ -63,6 +45,17 @@
 
 !inventory/
 !inventory/hosts.ini
+
+!nginx/
+!nginx/40-update-cloudflare-ips.sh
+!nginx/cloudflare_ips.conf
+!nginx/nginx.conf
+!nginx/update_cloudflare_ips.sh
+
+!nginx/conf.d/
+!nginx/conf.d/cloudflare_ips.conf
+!nginx/conf.d/cloudflare_ips.conf.bkp
+!nginx/conf.d/default.conf
 
 !static/
 
