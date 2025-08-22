@@ -150,17 +150,14 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
-# Ignore trailing slash in url
+# Append trailing slash in url
 APPEND_SLASH = True
 
-# IP Address FastAPI Docker Container Expose
-FASTAPI_HOST = os.getenv("FASTAPI_HOST")
-FASTAPI_PORT = os.getenv("FASTAPI_PORT")
-
-# Electron Bypass
+# BeforeItsPrinted compatibility configurations
 ELECTRON_BYPASS = os.getenv("ELECTRON_BYPASS")
+FASTAPI_URL = os.getenv("FASTAPI_URL")
 
-# Rest Framework
+# Rest framework
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",

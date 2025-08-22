@@ -15,9 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const fileInput = document.getElementById("input");
         formData.append("file", fileInput.files[0]);
 
-        const fastapihost = window.appConfig.hostFastAPI;
-        const fastapiport = window.appConfig.portFastAPI;
-        const response = await fetch(`http://${fastapihost}:${fastapiport}/parse/`, {
+        const fastapiurl = window.appConfig.urlFastAPI;
+        const response = await fetch(`${fastapiurl}`, {
             method: "POST",
             body: formData
         });
